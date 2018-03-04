@@ -1,0 +1,200 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_PlayerLayout</title>
+        @Styles.Render("~/Content/css")
+        <link href="~/Content/New folder/wp-content/themes/nightshade/style7bcd.css" rel="stylesheet" />
+   
+    <link href="~/Content/New folder/wp-content/themes/nightshade/assets/css/elegant-icons/style.min7bcd.css" rel="stylesheet" />
+    <link href="~/Content/New folder/wp-content/themes/nightshade/assets/css/modules.min7bcd.css" rel="stylesheet" />
+    <link href="~/Content/New folder/wp-content/plugins/elated-core/post-types/stock-photography/assets/css/plugins/lightgallery.min7bcd.css" rel="stylesheet" />
+    <link href="~/Content/New folder/wp-content/plugins/elated-core/post-types/stock-photography/assets/css/plugins/lg-transitions.min7bcd.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-orange.min.css">
+
+    <link href="~/Content/New folder/styles.css" rel="stylesheet" />
+    <style>
+        #view-source {
+            position: fixed;
+            display: block;
+            right: 0;
+            bottom: 0;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            z-index: 900;
+        }
+       
+    </style>
+    <link href="~/Content/New folder/wp-content/themes/nightshade/assets/css/modules.min7bcd.css" rel="stylesheet" />
+    <link href="~/Content/New folder/wp-includes/js/mediaelement/mediaelementplayer.min51cd.css" rel="stylesheet" />
+    <link href="~/Content/New folder/wp-includes/js/mediaelement/wp-mediaelement.min7bcd.css" rel="stylesheet" />
+    <link href="~/Content/New folder/wp-content/themes/nightshade/assets/css/woocommerce.min7bcd.css" rel="stylesheet" />
+
+    <script src="~/Content/New folder/wp-includes/js/jquery/jqueryb8ff.js"></script>
+
+   
+
+    <script src="~/Content/New folder/wp-includes/js/jquery/jqueryb8ff.js"></script>
+    <script src="~/Content/New folder/wp-includes/js/jquery/jquery-migrate.min330a.js"></script>
+
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="height:unset">
+    <header style="padding:25px">
+
+        <div class="eltdf-menu-area">
+
+            <div class="eltdf-vertical-align-containers">
+                <div class="eltdf-position-left">
+                    <!--
+                    -->
+                    <div class="eltdf-position-left-inner">
+
+                        <div class="eltdf-logo-wrapper">
+                            <a itemprop="url" href="../../../" style="height: 60px;">
+                                <img src="~/Content/First/images/logo.png" />
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="eltdf-position-right">
+                    <!--
+                    -->
+                    <div class="eltdf-position-right-inner">
+                        <a href="javascript:void(0)" class="eltdf-fullscreen-menu-opener">
+                            <span class="eltdf-fm-lines">
+                                <span class="eltdf-fm-line eltdf-line-1"></span>
+                                <span class="eltdf-fm-line eltdf-line-2"></span>
+                                <span class="eltdf-fm-line eltdf-line-3"></span>
+                                <span class="eltdf-fm-line eltdf-line-4"></span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="eltdf-fullscreen-menu-holder-outer" tabindex="0" style="height: 1012px; overflow-y: hidden; outline: none;">
+        <div class="eltdf-fullscreen-menu-holder">
+            <div class="eltdf-fullscreen-menu-holder-inner">
+                <nav class="eltdf-fullscreen-menu">
+                    <ul id="menu-fullscreen-menu" class="">
+                        <li id="popup-menu-item-4788" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children eltdf-active-item has_sub">
+                            <a href="#" class=" current " style="animation-delay: 70ms;"><span>Main Page</span></a>
+                            <ul class="sub_menu" style="">
+                                <li id="popup-menu-item-4800" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home "><a href="../index.html" class=""><span>@Html.ActionLink("Home", "Index", "Home")</span></a></li>
+                                <li id="popup-menu-item-4798" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../justified-gallery/index.html" class=""><span>@Html.ActionLink("About", "About", "Home")</span></a></li>
+                                <li id="popup-menu-item-4798" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../justified-gallery/index.html" class=""><span>@Html.ActionLink("Contact", "Contact", "Home")</span></a></li>
+                            </ul>
+                        </li>
+                        @{
+                            if (User.Identity.IsAuthenticated)
+                            {
+                                <li id="popup-menu-item-4813" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../standard-list/index.html" class="" style="animation-delay: 420ms;"><span>@Html.ActionLink("Following", "Edit", "Players")</span></a></li>
+                            }
+                        }
+                        @{
+                            if (User.IsInRole("Admin"))
+                            {
+                                <li id="popup-menu-item-4813" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../standard-list/index.html" class="" style="animation-delay: 420ms;"><span>@Html.ActionLink("Visters", "index", "Visters")</span></a></li>
+                                <li id="popup-menu-item-4813" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../standard-list/index.html" class="" style="animation-delay: 420ms;"><span>@Html.ActionLink("Players", "index", "Players")</span></a></li>
+                            }
+                        }
+
+                        @{
+                            if (User.IsInRole("Player"))
+                            {
+                                <li id="popup-menu-item-4813" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../standard-list/index.html" class="" style="animation-delay: 420ms;"><span>@Html.ActionLink("Profile", "Edit", "Players", new { id = @User.Identity.GetUserId() }, null)</span></a></li>
+                            }
+                        }
+                        <li id="popup-menu-item-4813" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../standard-list/index.html" class="" style="animation-delay: 420ms;"><span>@Html.Partial("_LoginPartial")</span></a></li>
+
+                    </ul>
+                </nav>
+            </div>
+            <a class="eltdf-fullscreen-menu-close" href="javascript:void(0)" style="top: 57px; left: 1821px;">
+                <span class="icon_close"></span>
+            </a>
+        </div>
+    </div>
+
+    @RenderBody()
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Content/New folder/wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.min7661.js"></script>
+    <script src="~/Content/New folder/wp-content/themes/nightshade/assets/js/modules/plugins/packery-mode.pkgd.min7bcd.js"></script>
+    <script src="~/Content/New folder/wp-content/themes/nightshade/assets/js/modules.min7bcd.js"></script>
+    <script src="~/Content/New folder/wp-includes/js/mediaelement/mediaelement-and-player.min51cd.js"></script>
+    <script src="~/Content/New folder/wp-content/themes/nightshade/assets/js/modules/plugins/fluidvids.min7bcd.js"></script>
+    <script src="~/Content/New folder/wp-content/plugins/js_composer/assets/lib/prettyphoto/js/jquery.prettyPhoto.min7661.js"></script>
+    <script src="~/Content/New folder/wp-content/themes/nightshade/assets/js/modules/plugins/jquery.nicescroll.min7bcd.js"></script>
+    <script src="~/Content/New folder/wp-content/themes/nightshade/assets/js/modules/plugins/parallax.min7bcd.js"></script>
+    <script>
+        Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), function (el) {
+            var link = el.querySelector('a');
+            if (!link) {
+                return;
+            }
+            var target = link.getAttribute('href');
+            if (!target) {
+                return;
+            }
+            el.addEventListener('click', function () {
+                location.href = target;
+            });
+        });
+    </script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var eltdfGlobalVars = {
+            "vars": {
+                "eltdfAddForAdminBar": 0,
+                "eltdfElementAppearAmount": -100,
+                "eltdfAjaxUrl": "http:\/\/nightshade.elated-themes.com\/wp-admin\/admin-ajax.php",
+                "eltdfStickyHeaderHeight": 0,
+                "eltdfStickyHeaderTransparencyHeight": 70,
+                "eltdfTopBarHeight": 0,
+                "eltdfLogoAreaHeight": 0,
+                "eltdfMenuAreaHeight": 140,
+                "eltdfMobileHeaderHeight": 70
+            }
+        };
+        var eltdfPerPageVars = {
+            "vars": {
+                "eltdfStickyScrollAmount": 0,
+                "eltdfHeaderTransparencyHeight": 0,
+                "eltdfHeaderVerticalWidth": 0
+            }
+        };
+                /* ]]> */
+    </script>
+    <script src="~/Content/New folder/wp-content/themes/nightshade/assets/js/modules.min7bcd.js"></script>
+    <script src="~/Content/New folder/wp-includes/js/mediaelement/mediaelement-and-player.min51cd.js"></script>
+    <script src="~/Content/New folder/wp-content/themes/nightshade/assets/js/modules/plugins/jquery.appear7bcd.js"></script>
+    <script src="~/Content/New folder/wp-content/themes/nightshade/assets/js/modules/plugins/modernizr.min7bcd.js"></script>
+    <script src="~/Content/New folder/wp-content/themes/nightshade/assets/js/modules/plugins/fluidvids.min7bcd.js"></script>
+    <script src="~/Content/New folder/wp-content/plugins/js_composer/assets/lib/prettyphoto/js/jquery.prettyPhoto.min7661.js"></script>
+
+    <script src="~/Content/New folder/wp-content/themes/nightshade/assets/js/modules/plugins/jquery.waitforimages7bcd.js"></script>
+    <script src="~/Content/New folder/wp-content/themes/nightshade/assets/js/modules/plugins/jquery.parallax-scroll7bcd.js"></script>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

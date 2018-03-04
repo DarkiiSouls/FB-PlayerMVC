@@ -1,0 +1,3 @@
+(function($){var typedJs={};typedJs.init=function(scope){this.initElement();this.refreshEvents();};typedJs.refreshEvents=function(){var that=this;$(document).on('ZnNewContent',function(e){that.initElement(e.content);});};typedJs.initElement=function(scope){var $el=scope?scope.find('.zn-dynamic-animated-typed'):$(".zn-dynamic-animated-typed");if($el.length===0){return;}
+$el.each(function(){var $this=$(this),$stringContainer=$this.prev('.zn_animated_dynamic_texts'),config=$stringContainer.data('config'),defaults={stringsElement:$stringContainer},config=$.extend(defaults,config);var timeCursor=$stringContainer.data('hidecursor');if(timeCursor){setTimeout(function(){$this.next('.typed-cursor').hide();},timeCursor);}
+$this.typed(config);});};typedJs.init();})(jQuery);

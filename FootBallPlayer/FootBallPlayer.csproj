@@ -1,0 +1,724 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{537B6ADC-2242-4DDD-96DE-7A638E344258}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FootBallPlayer</RootNamespace>
+    <AssemblyName>FootBallPlayer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FollowController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PlayerHomeControllerController.cs" />
+    <Compile Include="Controllers\PlayersController.cs" />
+    <Compile Include="Controllers\VistersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712131517373_sss.cs" />
+    <Compile Include="Migrations\201712131517373_sss.Designer.cs">
+      <DependentUpon>201712131517373_sss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Artical.cs" />
+    <Compile Include="Models\Follower.cs" />
+    <Compile Include="Models\Imag.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Massege.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Vister.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\HomePlayerViewModel.cs" />
+    <Compile Include="ViewModels\PlayerViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\First\css\animate.css" />
+    <Content Include="Content\First\css\bootstrap.css" />
+    <Content Include="Content\First\css\bootstrap.min.css" />
+    <Content Include="Content\First\css\icomoon.css" />
+    <Content Include="Content\First\css\owl.carousel.min.css" />
+    <Content Include="Content\First\css\owl.theme.default.min.css" />
+    <Content Include="Content\First\css\style.css" />
+    <Content Include="Content\First\images\1.jpg" />
+    <Content Include="Content\First\images\2.jpg" />
+    <Content Include="Content\First\images\3.jpg" />
+    <Content Include="Content\New folder\images\android-desktop.png" />
+    <Content Include="Content\New folder\images\avatar.png" />
+    <Content Include="Content\New folder\images\back.jpg" />
+    <Content Include="Content\New folder\images\bg_1024.jpg" />
+    <Content Include="Content\New folder\images\bg_2048.jpg" />
+    <Content Include="Content\New folder\images\bg_2880.jpg" />
+    <Content Include="Content\New folder\images\co1.jpg" />
+    <Content Include="Content\New folder\images\co2.jpg" />
+    <Content Include="Content\New folder\images\coffee.jpg" />
+    <Content Include="Content\New folder\images\favicon.png" />
+    <Content Include="Content\New folder\images\ios-desktop.png" />
+    <Content Include="Content\New folder\images\logo.png" />
+    <Content Include="Content\New folder\images\road.jpg" />
+    <Content Include="Content\New folder\images\road_big.jpg" />
+    <Content Include="Content\New folder\images\shopping.jpg" />
+    <Content Include="Content\New folder\wp-content\plugins\anti-spam\js\anti-spam-4.4.js" />
+    <Content Include="Content\New folder\wp-content\plugins\contact-form-7\images\ajax-loader.gif" />
+    <Content Include="Content\New folder\wp-content\plugins\contact-form-7\includes\css\styles5859.css" />
+    <Content Include="Content\New folder\wp-content\plugins\contact-form-7\includes\js\scripts5859.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\portfolio\assets\js\plugins\jquery.justifiedGallery.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\portfolio\assets\js\plugins\TweenMax.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\css\plugins\lg-transitions.min7bcd.css" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\css\plugins\lightgallery.min7bcd.css" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\fonts\lgd641.html" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\fonts\lgd641.svg" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\img\loading.gif" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\img\video-play.png" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\img\vimeo-play.png" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\img\youtube-play.png" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\js\plugins\jquery.justifiedGallery.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\js\plugins\jquery.mousewheel.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\js\plugins\lg-autoplay.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\js\plugins\lg-fullscreen.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\js\plugins\lg-thumbnail.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\js\plugins\lg-video.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\js\plugins\lg-zoom.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\js\plugins\lightgallery7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\js\plugins\picturefill.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\shortcodes\countdown\assets\js\plugins\jquery.countdown.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\shortcodes\counter\assets\js\plugins\absoluteCounter.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\shortcodes\counter\assets\js\plugins\counter7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\shortcodes\custom-font\assets\js\plugins\typed7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\shortcodes\full-screen-sections\assets\js\plugins\jquery.fullPage.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\shortcodes\parallax-gallery\assets\img\pg-frame.png" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\shortcodes\pie-chart\assets\js\plugins\easypiechart7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\shortcodes\scrolling-gallery\assets\js\plugins\swiper.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\shortcodes\vertical-split-slider\assets\js\plugins\jquery.multiscroll.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-membership\assets\css\membership-responsive.min7bcd.css" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-membership\assets\css\membership.min7bcd.css" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-membership\assets\js\membership.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\css\js_composer.min7661.css" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\fonts\vc_grid\vc_grid_v157a1.html" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\fonts\vc_grid\vc_grid_v157a1.svg" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\fonts\vc_icons_v2\fonts\vcpb-plugin-icons01aa.html" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\fonts\vc_icons_v2\fonts\vcpb-plugin-icons01aa.svg" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\flickr.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\address-book.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\alarm-clock.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\anchor.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\application-image.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\arrow.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\asterisk.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\auction-hammer.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\balloon-buzz.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\balloon-facebook.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\balloon-twitter.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\balloon.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\battery-full.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\binocular.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\blue-document-excel.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\blue-document-image.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\blue-document-music.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\blue-document-office.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\blue-document-pdf.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\blue-document-powerpoint.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\blue-document-word.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\bookmark.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\camcorder.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\camera.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\chart-pie.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\chart.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\clock.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\control.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\fire.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\heart.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\mail.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\plus-shield.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\icons\video.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\spinner.gif" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\toggle_close.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\images\toggle_open.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\js\dist\js_composer_front.min7661.js" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\js\vendors\woocommerce-add-to-cart7661.js" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\lib\bower\isotope\dist\isotope.pkgd.min7661.js" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\lib\bower\skrollr\dist\skrollr.min7661.js" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\lib\prettyphoto\js\jquery.prettyPhoto.min7661.js" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\lib\waypoints\waypoints.min7661.js" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\vc\alert.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\vc\exclamation.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\vc\info.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\vc\remove.png" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\vc\tick.png" />
+    <Content Include="Content\New folder\wp-content\plugins\revslider\admin\assets\images\transparent.png" />
+    <Content Include="Content\New folder\wp-content\plugins\revslider\public\assets\assets\coloredbg.png" />
+    <Content Include="Content\New folder\wp-content\plugins\revslider\public\assets\assets\gridtile.png" />
+    <Content Include="Content\New folder\wp-content\plugins\revslider\public\assets\assets\gridtile_3x3.png" />
+    <Content Include="Content\New folder\wp-content\plugins\revslider\public\assets\assets\gridtile_3x3_white.png" />
+    <Content Include="Content\New folder\wp-content\plugins\revslider\public\assets\assets\gridtile_white.png" />
+    <Content Include="Content\New folder\wp-content\plugins\revslider\public\assets\assets\loader.gif" />
+    <Content Include="Content\New folder\wp-content\plugins\revslider\public\assets\css\closedhand.html" />
+    <Content Include="Content\New folder\wp-content\plugins\revslider\public\assets\css\openhand.html" />
+    <Content Include="Content\New folder\wp-content\plugins\revslider\public\assets\css\settings035f.css" />
+    <Content Include="Content\New folder\wp-content\plugins\revslider\public\assets\fonts\revicons\revicons90c6.html" />
+    <Content Include="Content\New folder\wp-content\plugins\revslider\public\assets\fonts\revicons\revicons90c6.svg" />
+    <Content Include="Content\New folder\wp-content\plugins\revslider\public\assets\js\jquery.themepunch.revolution.min035f.js" />
+    <Content Include="Content\New folder\wp-content\plugins\revslider\public\assets\js\jquery.themepunch.tools.min035f.js" />
+    <Content Include="Content\New folder\wp-content\plugins\woocommerce\assets\css\select2e5ca.css" />
+    <Content Include="Content\New folder\wp-content\plugins\woocommerce\assets\js\frontend\add-to-cart.mine5ca.js" />
+    <Content Include="Content\New folder\wp-content\plugins\woocommerce\assets\js\frontend\address-i18n.mine5ca.js" />
+    <Content Include="Content\New folder\wp-content\plugins\woocommerce\assets\js\frontend\cart-fragments.mine5ca.js" />
+    <Content Include="Content\New folder\wp-content\plugins\woocommerce\assets\js\frontend\cart.mine5ca.js" />
+    <Content Include="Content\New folder\wp-content\plugins\woocommerce\assets\js\frontend\country-select.mine5ca.js" />
+    <Content Include="Content\New folder\wp-content\plugins\woocommerce\assets\js\frontend\lost-password.mine5ca.js" />
+    <Content Include="Content\New folder\wp-content\plugins\woocommerce\assets\js\frontend\password-strength-meter.mine5ca.js" />
+    <Content Include="Content\New folder\wp-content\plugins\woocommerce\assets\js\frontend\single-product.mine5ca.js" />
+    <Content Include="Content\New folder\wp-content\plugins\woocommerce\assets\js\frontend\woocommerce.mine5ca.js" />
+    <Content Include="Content\New folder\wp-content\plugins\woocommerce\assets\js\jquery-blockui\jquery.blockUI.min44fd.js" />
+    <Content Include="Content\New folder\wp-content\plugins\woocommerce\assets\js\js-cookie\js.cookie.min6b25.js" />
+    <Content Include="Content\New folder\wp-content\plugins\woocommerce\assets\js\photoswipe\photoswipe-ui-default.min0235.js" />
+    <Content Include="Content\New folder\wp-content\plugins\woocommerce\assets\js\photoswipe\photoswipe.min0235.js" />
+    <Content Include="Content\New folder\wp-content\plugins\woocommerce\assets\js\select2\select2.full.minfa0c.js" />
+    <Content Include="Content\New folder\wp-content\plugins\woocommerce\assets\js\selectWoo\selectWoo.full.minf269.js" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\dripicons\dripicons7bcd.css" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\dripicons\fonts\dripicons-v2.html" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\dripicons\fonts\dripicons-v2.svg" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\elegant-icons\fonts\ElegantIcons.html" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\elegant-icons\fonts\ElegantIcons.svg" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\elegant-icons\style.min7bcd.css" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\font-awesome\css\font-awesome.min7bcd.css" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\font-awesome\fonts\fontawesome-webfont3e6e-2.html" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\font-awesome\fonts\fontawesome-webfont3e6e.html" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\font-awesome\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\ion-icons\css\ionicons.min7bcd.css" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\ion-icons\fonts\ionicons28b5.html" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\ion-icons\fonts\ionicons28b5.svg" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\arrows\fonts\linea-arrows-10.html" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\arrows\fonts\linea-arrows-10.svg" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\basic-elaboration\fonts\linea-basic-elaboration-10.html" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\basic-elaboration\fonts\linea-basic-elaboration-10.svg" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\basic\fonts\linea-basic-10.html" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\basic\fonts\linea-basic-10.svg" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\ecommerce\fonts\linea-ecommerce-10.html" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\ecommerce\fonts\linea-ecommerce-10.svg" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\music\fonts\linea-music-10.html" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\music\fonts\linea-music-10.svg" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\software\fonts\linea-software-10.html" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\software\fonts\linea-software-10.svg" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\style7bcd.css" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\weather\fonts\linea-weather-10.html" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\weather\fonts\linea-weather-10.svg" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linear-icons\fonts\Linearicons-Free54e9-2.html" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linear-icons\fonts\Linearicons-Free54e9.html" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linear-icons\fonts\Linearicons-Free54e9.svg" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linear-icons\style7bcd.css" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\modules-responsive.min7bcd.css" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\modules.min7bcd.css" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\simple-line-icons\fonts\Simple-Line-Icons4c82-2.html" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\simple-line-icons\fonts\Simple-Line-Icons4c82.html" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\simple-line-icons\fonts\Simple-Line-Icons4c82.svg" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\simple-line-icons\simple-line-icons7bcd.css" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\style_dynamic2c3f.css" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\style_dynamic_responsive2c3f.css" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\woocommerce-responsive.min7bcd.css" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\woocommerce.min7bcd.css" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\img\preload_pattern.png" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\img\zoom-in.png" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\img\zoom-out.png" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\js\modules.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\js\modules\plugins\Chart.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\js\modules\plugins\fluidvids.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\js\modules\plugins\jquery.appear7bcd.js" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\js\modules\plugins\jquery.easing.1.37bcd.js" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\js\modules\plugins\jquery.hoverIntent.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\js\modules\plugins\jquery.nicescroll.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\js\modules\plugins\jquery.parallax-scroll7bcd.js" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\js\modules\plugins\jquery.plugin7bcd.js" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\js\modules\plugins\jquery.waitforimages7bcd.js" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\js\modules\plugins\modernizr.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\js\modules\plugins\owl.carousel.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\js\modules\plugins\packery-mode.pkgd.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\js\modules\plugins\parallax.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\js\modules\plugins\ScrollToPlugin.min7bcd.js" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\framework\modules\blog\assets\img\audio\mute.png" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\framework\modules\blog\assets\img\audio\pause.png" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\framework\modules\blog\assets\img\audio\play.png" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\framework\modules\blog\assets\img\audio\sound.png" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\framework\modules\blog\assets\img\audio\stop.png" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\style7bcd.css" />
+    <Content Include="Content\New folder\wp-content\uploads\2017\10\default-logo-sliding-menu-minimal.png" />
+    <Content Include="Content\New folder\wp-includes\js\jquery\jquery-migrate.min330a.js" />
+    <Content Include="Content\New folder\wp-includes\js\jquery\jqueryb8ff.js" />
+    <Content Include="Content\New folder\wp-includes\js\mediaelement\mediaelement-and-player.min51cd.js" />
+    <Content Include="Content\New folder\wp-includes\js\mediaelement\mediaelementplayer.min51cd.css" />
+    <Content Include="Content\New folder\wp-includes\js\mediaelement\wp-mediaelement.min7bcd.css" />
+    <Content Include="Content\New folder\wp-includes\wlwmanifest.xml" />
+    <Content Include="Content\Second\css\plugins\animated-text-element\assets\js\script8a54.js" />
+    <Content Include="Content\Second\css\plugins\animated-text-element\assets\js\typed.min8a54.js" />
+    <Content Include="Content\Second\css\plugins\kallyas-addon-side-header\assets\app.min6f3e.js" />
+    <Content Include="Content\Second\css\plugins\kallyas-addon-side-header\assets\styles.min6f3e.css" />
+    <Content Include="Content\Second\css\plugins\revslider\public\assets\assets\coloredbg.png" />
+    <Content Include="Content\Second\css\plugins\revslider\public\assets\assets\gridtile.png" />
+    <Content Include="Content\Second\css\plugins\revslider\public\assets\assets\gridtile_3x3.png" />
+    <Content Include="Content\Second\css\plugins\revslider\public\assets\assets\gridtile_3x3_white.png" />
+    <Content Include="Content\Second\css\plugins\revslider\public\assets\assets\gridtile_white.png" />
+    <Content Include="Content\Second\css\plugins\revslider\public\assets\assets\loader.gif" />
+    <Content Include="Content\Second\css\plugins\revslider\public\assets\css\closedhand.html" />
+    <Content Include="Content\Second\css\plugins\revslider\public\assets\css\openhand.html" />
+    <Content Include="Content\Second\css\plugins\revslider\public\assets\css\settingsa88c.css" />
+    <Content Include="Content\Second\css\plugins\revslider\public\assets\fonts\revicons\revicons90c6.svg" />
+    <Content Include="Content\Second\css\plugins\revslider\public\assets\js\jquery.themepunch.revolution.mina88c.js" />
+    <Content Include="Content\Second\css\plugins\revslider\public\assets\js\jquery.themepunch.tools.mina88c.js" />
+    <Content Include="Content\Second\css\plugins\znpb-counter-element\elements\counter\js\app9dbb.js" />
+    <Content Include="Content\Second\css\plugins\znpb-counter-element\elements\counter\js\jquery.countTo.min9dbb.js" />
+    <Content Include="Content\Second\css\themes\kallyas-child\demo-images\flags\en.png" />
+    <Content Include="Content\Second\css\themes\kallyas-child\demo-images\flags\es.png" />
+    <Content Include="Content\Second\css\themes\kallyas-child\demo-images\flags\fr.png" />
+    <Content Include="Content\Second\css\themes\kallyas-child\style9dbb.css" />
+    <Content Include="Content\Second\css\themes\kallyas\addons\scrollmagic\scrollmagic9dbb.js" />
+    <Content Include="Content\Second\css\themes\kallyas\addons\slick\slick.min9dbb.js" />
+    <Content Include="Content\Second\css\themes\kallyas\addons\smooth_scroll\SmoothScroll.min9dbb.js" />
+    <Content Include="Content\Second\css\themes\kallyas\css\bootstrap.min9dbb.css" />
+    <Content Include="Content\Second\css\themes\kallyas\css\print9dbb.css" />
+    <Content Include="Content\Second\css\themes\kallyas\css\template.min9dbb.css" />
+    <Content Include="Content\Second\css\themes\kallyas\framework\hogash-mailchimp\assets\css\hg-mailchimp8a54.css" />
+    <Content Include="Content\Second\css\themes\kallyas\framework\hogash-mailchimp\assets\js\hg-mailchimp8a54.js" />
+    <Content Include="Content\Second\css\themes\kallyas\framework\zion-builder\assets\css\znb_frontend0ba6.css" />
+    <Content Include="Content\Second\css\themes\kallyas\framework\zion-builder\assets\js\editor\zn_frontend0ba6.js" />
+    <Content Include="Content\Second\css\themes\kallyas\framework\zion-builder\hg-framework\assets\dist\js\jquery.isotope.min5472.js" />
+    <Content Include="Content\Second\css\themes\kallyas\framework\zion-builder\hg-framework\assets\dist\js\jquery.timepicker.min9dbb.js" />
+    <Content Include="Content\Second\css\themes\kallyas\images\bottom_mask.png" />
+    <Content Include="Content\Second\css\themes\kallyas\images\bottom_mask2.png" />
+    <Content Include="Content\Second\css\themes\kallyas\images\hoverme.png" />
+    <Content Include="Content\Second\css\themes\kallyas\images\ring-alt.svg" />
+    <Content Include="Content\Second\css\themes\kallyas\images\say_hi.png" />
+    <Content Include="Content\Second\css\themes\kallyas\images\say_hi_smaller.png" />
+    <Content Include="Content\Second\css\themes\kallyas\images\select-arrow.svg" />
+    <Content Include="Content\Second\css\themes\kallyas\images\shadow-down.png" />
+    <Content Include="Content\Second\css\themes\kallyas\images\shadow-up.png" />
+    <Content Include="Content\Second\css\themes\kallyas\images\twitter-bird.png" />
+    <Content Include="Content\Second\css\themes\kallyas\js\plugins.min9dbb.js" />
+    <Content Include="Content\Second\css\themes\kallyas\js\znscript.min9dbb.js" />
+    <Content Include="Content\Second\css\themes\kallyas\template_helpers\icons\glyphicons_halflingsregular\glyphicons_halflingsregular.html" />
+    <Content Include="Content\Second\css\themes\kallyas\template_helpers\icons\glyphicons_halflingsregular\glyphicons_halflingsregular.svg" />
+    <Content Include="Content\Second\css\themes\kallyas\template_helpers\icons\kl-social-icons\kl-social-icons.svg" />
+    <Content Include="Content\Second\css\uploads\2017\06\cropped-27283439-f55d79e4-54fc-11e7-92e4-25e0d2f34f68-180x180.png" />
+    <Content Include="Content\Second\css\uploads\2017\06\cropped-27283439-f55d79e4-54fc-11e7-92e4-25e0d2f34f68-192x192.png" />
+    <Content Include="Content\Second\css\uploads\2017\06\cropped-27283439-f55d79e4-54fc-11e7-92e4-25e0d2f34f68-32x32.png" />
+    <Content Include="Content\Second\css\uploads\sites\37\zion-builder\cache\41-layout5f9b.css" />
+    <Content Include="Content\Second\css\uploads\sites\37\zn_dynamic1d92.css" />
+    <Content Include="Content\Second\images\stadium-wallpaper-2880x1800.jpg" />
+    <Content Include="Content\Second\js\jquery\jqueryb8ff.js" />
+    <Content Include="Content\Second\js\jquery\ui\core.mine899.js" />
+    <Content Include="Content\Second\js\jquery\ui\datepicker.mine899.js" />
+    <Content Include="Content\Second\js\wp-embed.min5472.js" />
+    <Content Include="Content\New folder\styles.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\Video\bootstrap.min.css" />
+    <Content Include="Content\Video\bootstrap.min.js" />
+    <Content Include="Content\Video\jquery.min.js" />
+    <Content Include="Content\Video\mbr-additional.css" />
+    <Content Include="Content\Video\mobirise-icons.css" />
+    <Content Include="Content\Video\popper.min.js" />
+    <Content Include="Content\Video\script.js" />
+    <Content Include="Content\Video\smooth-scroll.js" />
+    <Content Include="Content\Video\style.css" />
+    <Content Include="Content\Video\stylem.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Files\PlayerPage\No.png" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\icomoon\icomoon.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\First\css\Site.css" />
+    <Content Include="Content\First\images\logo.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\icomoon\icomoon.eot" />
+    <Content Include="fonts\icomoon\icomoon.ttf" />
+    <Content Include="fonts\icomoon\icomoon.woff" />
+    <Content Include="Content\Second\css\plugins\revslider\public\assets\fonts\revicons\revicons90c6.eot" />
+    <Content Include="Content\Second\css\plugins\revslider\public\assets\fonts\revicons\revicons90c6.ttf" />
+    <Content Include="Content\Second\css\plugins\revslider\public\assets\fonts\revicons\revicons90c6.woff" />
+    <Content Include="Content\Second\css\themes\kallyas\template_helpers\icons\glyphicons_halflingsregular\glyphicons_halflingsregular.eot" />
+    <Content Include="Content\Second\css\themes\kallyas\template_helpers\icons\glyphicons_halflingsregular\glyphicons_halflingsregular.ttf" />
+    <Content Include="Content\Second\css\themes\kallyas\template_helpers\icons\glyphicons_halflingsregular\glyphicons_halflingsregular.woff" />
+    <Content Include="Content\Second\css\themes\kallyas\template_helpers\icons\glyphicons_halflingsregular\glyphicons_halflingsregulard41d.eot" />
+    <Content Include="Content\Second\css\themes\kallyas\template_helpers\icons\kl-social-icons\kl-social-icons.eot" />
+    <Content Include="Content\Second\css\themes\kallyas\template_helpers\icons\kl-social-icons\kl-social-icons.ttf" />
+    <Content Include="Content\Second\css\themes\kallyas\template_helpers\icons\kl-social-icons\kl-social-icons.woff" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\fonts\lgd41d.eot" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\fonts\lgd641.eot" />
+    <Content Include="Content\New folder\wp-content\plugins\elated-core\post-types\stock-photography\assets\fonts\lgd641.woff" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\fonts\vc_grid\vc_grid_v157a1.eot" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\fonts\vc_grid\vc_grid_v157a1.woff" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\fonts\vc_grid\vc_grid_v1d41d.eot" />
+    <Content Include="Content\New folder\wp-content\plugins\js_composer\assets\fonts\vc_icons_v2\fonts\vcpb-plugin-icons01aa.woff" />
+    <Content Include="Content\New folder\wp-content\plugins\revslider\public\assets\fonts\revicons\revicons90c6.eot" />
+    <Content Include="Content\New folder\wp-content\plugins\revslider\public\assets\fonts\revicons\revicons90c6.woff" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\dripicons\fonts\dripicons-v2.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\dripicons\fonts\dripicons-v2.woff" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\dripicons\fonts\dripicons-v2d41d.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\elegant-icons\fonts\ElegantIcons.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\elegant-icons\fonts\ElegantIcons.woff" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\elegant-icons\fonts\ElegantIconsd41d.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\font-awesome\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\font-awesome\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\ion-icons\fonts\ionicons28b5.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\ion-icons\fonts\ionicons28b5.woff" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\arrows\fonts\linea-arrows-10.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\arrows\fonts\linea-arrows-10.woff" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\arrows\fonts\linea-arrows-10d41d.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\basic-elaboration\fonts\linea-basic-elaboration-10.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\basic-elaboration\fonts\linea-basic-elaboration-10.woff" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\basic-elaboration\fonts\linea-basic-elaboration-10d41d.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\basic\fonts\linea-basic-10.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\basic\fonts\linea-basic-10.woff" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\basic\fonts\linea-basic-10d41d.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\ecommerce\fonts\linea-ecommerce-10.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\ecommerce\fonts\linea-ecommerce-10.woff" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\ecommerce\fonts\linea-ecommerce-10d41d.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\music\fonts\linea-music-10.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\music\fonts\linea-music-10.woff" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\music\fonts\linea-music-10d41d.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\software\fonts\linea-software-10.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\software\fonts\linea-software-10.woff" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\software\fonts\linea-software-10d41d.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\weather\fonts\linea-weather-10.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\weather\fonts\linea-weather-10.woff" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linea-icons\weather\fonts\linea-weather-10d41d.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linear-icons\fonts\Linearicons-Free54e9.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linear-icons\fonts\Linearicons-Free54e9.woff" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\linear-icons\fonts\Linearicons-Freed41d.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\simple-line-icons\fonts\Simple-Line-Icons4c82.eot" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\simple-line-icons\fonts\Simple-Line-Icons4c82.woff" />
+    <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\simple-line-icons\fonts\Simple-Line-Iconsd41d.eot" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\google_map.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.countTo.js" />
+    <Content Include="Scripts\jquery.easing.1.3.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.stellar.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.waypoints.min.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\modernizr-2.6.2.min.js" />
+    <Content Include="Scripts\owl.carousel.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_1Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Visters\Create.cshtml" />
+    <Content Include="Views\Visters\Delete.cshtml" />
+    <Content Include="Views\Visters\Details.cshtml" />
+    <Content Include="Views\Visters\Edit.cshtml" />
+    <Content Include="Views\Visters\Index.cshtml" />
+    <Content Include="Views\Players\Create.cshtml" />
+    <Content Include="Views\Players\Delete.cshtml" />
+    <Content Include="Views\Players\Edit.cshtml" />
+    <Content Include="Views\Players\Index.cshtml" />
+    <Content Include="Views\Follow\Follow.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\PlayerHomeController\Index.cshtml" />
+    <Content Include="Views\Shared\_PlayerLayout.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\PlayerHomeController\Photos.cshtml" />
+    <Content Include="Views\PlayerHomeController\Videos.cshtml" />
+    <Content Include="Views\PlayerHomeController\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Files\Articals\" />
+    <Folder Include="Files\Players\" />
+    <Folder Include="Files\Videos\" />
+    <Folder Include="Models\Functions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712131517373_sss.resx">
+      <DependentUpon>201712131517373_sss.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49837</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49837/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

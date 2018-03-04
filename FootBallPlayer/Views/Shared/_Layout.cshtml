@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+@using FootBallPlayer.Models
+@using Microsoft.AspNet.Identity
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Home</title>
+    <!-- Custom Theme files -->
+    @Styles.Render("~/Content/css")
+
+    <link href="~/Content/Second/css/themes/kallyas/framework/hogash-mailchimp/assets/css/hg-mailchimp8a54.css" rel="stylesheet" />
+    <link href="~/Content/Second/css/themes/kallyas-child/style9dbb.css" rel="stylesheet" />
+    <link href="~/Content/Second/css/themes/kallyas/css/bootstrap.min9dbb.css" rel="stylesheet" />
+    <link href="~/Content/Second/css/themes/kallyas/css/template.min9dbb.css" rel="stylesheet" />
+    <link href="~/Content/Second/css/themes/kallyas/framework/zion-builder/assets/css/znb_frontend0ba6.css" rel="stylesheet" />
+    <link href="~/Content/Second/css/uploads/sites/37/zion-builder/cache/41-layout5f9b.css" rel="stylesheet" />
+    <link href="~/Content/Second/css/plugins/kallyas-addon-side-header/assets/styles.min6f3e.css" rel="stylesheet" />
+    <link href="~/Content/Second/css/themes/kallyas/css/print9dbb.css" rel="stylesheet" />
+    <link href="~/Content/Second/css/uploads/sites/37/zn_dynamic1d92.css" rel="stylesheet" />
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <style>
+        .in {
+            width: 13px;
+            box-sizing: border-box;
+            border: 0;
+            outline: none;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('https://www.w3schools.com/howto/searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+            float: right;
+            
+        }
+
+            .in1:focus {
+                width: 300px;
+                border-top: 0;
+                border-right: 0;
+                border-left: 0;
+                border-bottom: 1px solid #ddd;
+            }
+
+    </style>
+    <script src="~/Content/Second/js/jquery/jqueryb8ff.js"></script>
+    <script src="~/Content/Second/css/plugins/revslider/public/assets/js/jquery.themepunch.tools.mina88c.js"></script>
+    <script src="~/Content/Second/css/plugins/revslider/public/assets/js/jquery.themepunch.revolution.mina88c.js"></script>
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body class="home page-template-default page page-id-41 res1170 kl-skin--light" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+    <div class="login_register_stuff"></div>
+    <div id="zn-side-header" class="znSdHead znSdHead-alg--left znSdHead-cAlg--center text-center znSdHead-theme--dark" data-minimize="1445">
+        <div class="znSdHead-inner">
+            <div class="znSdHead-cell znSdHead-cell--top">
+                <div class="znSdHeadLogo text-center">
+                    <a href="/"><img src="~/Content/First/images/logo.png" alt="SideFolio" title="Just another Kallyas Demo Sites site"></a>
+                </div>
+            </div>
+            <div class="znSdHead-cell znSdHead-cell--mid znSdHead-cellValign--mid">
+                <div class="side-main-menu side-main-menu--depth2" id="side-main-menu" data-show-breadcrumbs="yes" data-breadcrumb-text="all">
+                    <button id="znSdHead-menuBack" class="znSdHead-menuBack znSdHead-menuBack--hidden" aria-label="Go back">
+                        <span class="icon-znshfont-arrow-left"></span>
+                    </button>
+                    <nav class="znSdHead-menuBrc" id="znSdHead-menuBrc"><a>all</a></nav>
+                    <ul id="side-main-nav" class="side-main-nav znSdHead-menuList is-first nav-with-smooth-scroll">
+                        <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46 znSdHead-menuList-item"><a href="#page_wrapper" class="znSdHead-menuList-link">@Html.ActionLink("Home", "Index", "Home")</a></li>
+                        @{
+                            if (User.Identity.IsAuthenticated)
+                            {
+                                <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48 znSdHead-menuList-item"><a href="#eluidd85ca84f" class="znSdHead-menuList-link">@Html.ActionLink("Following", "Edit", "Players")</a></li>
+                            }
+                        }
+                        @{
+                            if (User.IsInRole("Admin"))
+                            {
+                                <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48 znSdHead-menuList-item"><a href="#eluidd85ca84f" class="znSdHead-menuList-link">@Html.ActionLink("Visters", "index", "Visters")</a></li>
+                                <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48 znSdHead-menuList-item"><a href="#eluidd85ca84f" class="znSdHead-menuList-link">@Html.ActionLink("Players", "index", "Players")</a></li>
+                            }
+                        }
+
+                        @{
+                            if (User.IsInRole("Player"))
+                            {
+                                <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48 znSdHead-menuList-item"><a href="#eluidd85ca84f" class="znSdHead-menuList-link">@Html.ActionLink("Profile", "Edit", "Players", new { id = @User.Identity.GetUserId() }, null)</a></li>
+                            }
+                        }
+                        <li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47 znSdHead-menuList-item"><a href="#eluid5262d664" class="znSdHead-menuList-link">@Html.ActionLink("About", "About", "Home")</a></li>
+
+                        <li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50 znSdHead-menuList-item"><a href="#eluid63f0c71a" class="znSdHead-menuList-link">@Html.ActionLink("Contact", "Contact", "Home")</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="znSdHead-cell znSdHead-cell--btm">
+
+                <div class="znSdHeadFlags">
+                    
+                    @*<div class="znSdHeadFlags-item active">
+                        <a href="#"><img src="~/Content/Second/css/themes/kallyas-child/demo-images/flags/en.png" alt="English" /></a>
+                    </div>
+                    <div class="znSdHeadFlags-item ">
+                        <a href="#?lang=fr"><img src="~/Content/Second/css/themes/kallyas-child/demo-images/flags/fr.png" alt="Francais" /></a>
+                    </div>
+                    <div class="znSdHeadFlags-item ">
+                        <a href="#?lang=es"><img src="~/Content/Second/css/themes/kallyas-child/demo-images/flags/es.png" alt="Espanol" /></a>
+                    </div>*@
+                </div>
+                <div class="znSdHeadSocial">
+                    <ul class="znSdHeadSocial-list clearfix">
+                        <li><a href="#" title="Facebook" class="znSdHeadSocial-Link znSdHeadSocial-item0" target="_self" itemprop="url"><span class="znSdHeadSocial-icon" data-zniconfam="kl-social-icons" data-zn_icon=""></span></a></li>
+                        <li><a href="#" title="Twitter" class="znSdHeadSocial-Link znSdHeadSocial-item1" target="_self" itemprop="url"><span class="znSdHeadSocial-icon" data-zniconfam="kl-social-icons" data-zn_icon=""></span></a></li>
+                        <li><a href="#" title="Instagram" class="znSdHeadSocial-Link znSdHeadSocial-item2" target="_self" itemprop="url"><span class="znSdHeadSocial-icon" data-zniconfam="kl-social-icons" data-zn_icon=""></span></a></li>
+                        <li><a href="#" title="Pinterest" class="znSdHeadSocial-Link znSdHeadSocial-item3" target="_self" itemprop="url"><span class="znSdHeadSocial-icon" data-zniconfam="kl-social-icons" data-zn_icon=""></span></a></li>
+                    </ul>
+                </div>
+                <p class="znSdHeadText-wrapper">
+                    <div class="znSdHeadText">&copy; @DateTime.Now.Year - FootBallPlayers</div>
+                    <p style="display:inline-block">@Html.Partial("_LoginPartial")</p>
+
+                       
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="znSdHead-burger" id="znSdHead-burger">
+        <span></span><span></span><span></span>
+    </div>
+    <div id="page_wrapper">
+        
+        @RenderBody()
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Content/Second/css/themes/kallyas/framework/hogash-mailchimp/assets/js/hg-mailchimp8a54.js"></script>
+    <script src="~/Content/Second/css/themes/kallyas/js/plugins.min9dbb.js"></script>
+    <script src="~/Content/Second/css/themes/kallyas/addons/scrollmagic/scrollmagic9dbb.js"></script>
+    <script src="~/Content/Second/css/themes/kallyas/js/znscript.min9dbb.js"></script>
+    <script src="~/Content/Second/css/themes/kallyas/addons/slick/slick.min9dbb.js"></script>
+    <script src="~/Content/Second/css/themes/kallyas/framework/zion-builder/assets/js/editor/zn_frontend0ba6.js"></script>
+    <script src="~/Content/Second/js/jquery/ui/datepicker.mine899.js"></script>
+    <script src="~/Content/Second/css/themes/kallyas/framework/zion-builder/hg-framework/assets/dist/js/jquery.timepicker.min9dbb.js"></script>
+    <script src="~/Content/Second/css/plugins/kallyas-addon-side-header/assets/app.min6f3e.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

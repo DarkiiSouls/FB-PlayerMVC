@@ -1,0 +1,174 @@
+﻿@model FootBallPlayer.ViewModels.PlayerViewModel
+@*@{
+    List<FootBallPlayer.ViewModels.PlayerViewModel> Player = ViewBag.Player as List<FootBallPlayer.ViewModels.PlayerViewModel>;
+}
+@{
+    List<FootBallPlayer.ViewModels.PlayerViewModel> Player = ViewBag.Player as List<FootBallPlayer.ViewModels.PlayerViewModel>;
+}*@
+@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_PlayerLayout.cshtml";
+}
+@if (Model.Imags != null)
+{
+    <style>
+        body::before {
+            background-image: url(/Files/PlayerPage/@Model.Imags.Name);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+}
+<style>
+    .Text__input {
+        height: 34px;
+        width: 700px;
+        border-radius: 20px;
+        background: whitesmoke;
+        margin-left: 20px;
+        text-align: center;
+    }
+</style>
+
+    <div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
+        <main class="mdl-layout__content">
+            <div class="demo-back">
+                <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="~/PlayerHomeController/Index/@Model.Players.PlayerId" title="go back" role="button" style="margin:35px">
+                    <i class="material-icons" role="presentation">arrow_back</i>
+                </a>
+               
+            </div>
+            <div class="demo-blog__posts mdl-grid">
+                @if (User.Identity.GetUserId() == Model.Players.PlayerUserId || User.IsInRole("Admin") ){ 
+                
+                    @*@Html.ActionLink("Edit", "Edit", new { id = Model.PlayerUserId })">*@
+                    <a href="/Players/Edit/@Model.Players.PlayerUserId" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" data-upgraded=",MaterialButton,MaterialRipple" style="margin-right:0">
+                        <i class="material-icons mdl-color-text--white" role="presentation">add</i>
+                    </a>
+                
+                }
+                    <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+                        <div class="mdl-card__media mdl-color-text--grey-50">
+                            <h3 style="color:snow">@Html.DisplayFor(model => model.Players.FullName)</h3>
+                        </div>
+
+                        <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+                            <div>
+                                <strong style="font-size:20px;padding:10px">@Html.Action("Follow", "Follow", new { id = Model.Players.PlayerUserId })</strong>
+                            </div>
+                            <div class="section-spacer"></div>
+
+                            <div class="meta__favorites">
+                                425 <i class="material-icons" role="presentation"></i>
+                                <span class="visuallyhidden">favorites</span>
+                            </div>
+                            <div>
+                                <i class="material-icons" role="presentation">bookmark</i>
+                                <span class="visuallyhidden">bookmark</span>
+                            </div>
+                            <div>
+                                <i class="material-icons" role="presentation">share</i>
+                                <span class="visuallyhidden">share</span>
+                            </div>
+                        </div>
+                        <div style="display:inline;font-style: oblique; padding: 20px">
+
+                            <br />
+
+                            <h4><strong>@Html.DisplayNameFor(model => model.Players.Age):</strong> @Html.DisplayFor(model => model.Players.Age)</h4>
+                            <h4><strong>@Html.DisplayNameFor(model => model.Players.Height):</strong> @Html.DisplayFor(model => model.Players.Height) m</h4>
+                            <h4><strong>@Html.DisplayNameFor(model => model.Players.Weight):</strong> @Html.DisplayFor(model => model.Players.Weight) kg</h4>
+                            <h4><strong>@Html.DisplayNameFor(model => model.Players.Salary):</strong> @Html.DisplayFor(model => model.Players.Salary) million EUR (2016)</h4>
+                            <h4><strong>@Html.DisplayNameFor(model => model.Players.DataTime):</strong> @Html.DisplayFor(model => model.Players.DataTime)</h4>
+
+
+                        </div>
+                        <div style="padding:20px">
+                            <h4>About Me </h4>
+
+                            <p style="padding:20px ;font-size: 26px;font-family: serif; text-align: justify">
+                                @Html.DisplayFor(model => model.Players.Detail)
+                            </p>
+                        </div>
+                        <br />
+                        @using (Html.BeginForm())
+                        {
+                        @Html.AntiForgeryToken()
+
+                        <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
+                            <div >
+                                <h3 style="color:darkkhaki;
+    text-align: center;">Masseges</h3>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="" >
+                                
+                                @Html.TextAreaFor(model => model.Massege.Text , new { @class = "Text__input" })
+                                @Html.ValidationMessageFor(model => model.Massege.Text, "", new { @class = "text-danger" })
+
+                               
+                            </div>
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="    position: absolute;
+    right: 40px;
+    margin: 46px;">
+                                <i class="material-icons" role="presentation">check</i><span class="visuallyhidden">add comment</span>
+                            </button>
+                           @for (int i = 0; i < Model.Masseges.Count(); i++)
+                           {
+                        <div class="comment mdl-color-text--grey-700" style="margin:20px" >
+                            <header class="comment__header" >
+                                <img src="~/Files/PlayerPage/No.png" class="comment__avatar">
+                                <div class="comment__author" >
+                                    <strong>@Model.Masseges[i].Name</strong>
+                                    <span>@Model.Masseges[i].Time</span>
+                                </div>
+                            </header>
+                            <div class="comment__text" style="    background-color: white;padding: 10px;border-radius: 10px">
+                                @Model.Masseges[i].Text
+                            </div>
+                            <nav class="comment__actions">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                    <i class="material-icons" role="presentation">thumb_up</i><span class="visuallyhidden">like comment</span>
+                                </button>
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                    <i class="material-icons" role="presentation">thumb_down</i><span class="visuallyhidden">dislike comment</span>
+                                </button>
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                    <i class="material-icons" role="presentation">share</i><span class="visuallyhidden">share comment</span>
+                                </button>
+                            </nav>
+
+                        </div>
+}
+
+                        </div>
+                        }
+                    </div>
+            </div>
+            <footer class="mdl-mini-footer">
+                <div class="mdl-mini-footer--left-section">
+                    <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter">
+                        <span class="visuallyhidden">Twitter</span>
+                    </button>
+                    <button class="mdl-mini-footer--social-btn social-btn social-btn__blogger">
+                        <span class="visuallyhidden">Facebook</span>
+                    </button>
+                    <button class="mdl-mini-footer--social-btn social-btn social-btn__gplus">
+                        <span class="visuallyhidden">Google Plus</span>
+                    </button>
+                </div>
+                <div class="mdl-mini-footer--right-section">
+                    <button class="mdl-mini-footer--social-btn social-btn__share">
+                        <i class="material-icons" role="presentation">share</i>
+                        <span class="visuallyhidden">share</span>
+                    </button>
+                </div>
+                
+            </footer>
+        </main>
+        <div class="mdl-layout__obfuscator"></div>
+    </div>
+ 

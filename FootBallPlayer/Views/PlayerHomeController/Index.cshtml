@@ -1,0 +1,405 @@
+﻿@model FootBallPlayer.ViewModels.PlayerViewModel
+@using Microsoft.AspNet.Identity
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link href="~/Content/New folder/wp-content/themes/nightshade/assets/css/modules.min7bcd.css" rel="stylesheet" />
+    <link href="~/Content/New folder/wp-content/themes/nightshade/assets/css/elegant-icons/style.min7bcd.css" rel="stylesheet" />
+    <style id='nightshade_elated_woo-inline-css' type='text/css'>
+        /* generated in /www/sites/nightshade.elated-themes.com/files/html/wp-content/themes/nightshade/framework/admin/options/general/map.php nightshade_elated_page_general_style function */
+
+        .page-id-933.eltdf-boxed .eltdf-wrapper {
+            background-attachment: fixed;
+        }
+        /* generated in /www/sites/nightshade.elated-themes.com/files/html/wp-content/themes/nightshade/framework/modules/header/helper-functions.php nightshade_elated_header_area_style function */
+
+        .page-id-933.eltdf-header-sliding .eltdf-sliding-column > ul > .menu-item .eltdf-sliding-second {
+            background-color: rgba(255, 255, 255, 0);
+        }
+        /* generated in /www/sites/nightshade.elated-themes.com/files/html/wp-content/themes/nightshade/framework/modules/header/helper-functions.php nightshade_elated_header_area_style function */
+
+        .page-id-933 .eltdf-page-header .eltdf-menu-area {
+            background-color: rgba(255, 255, 255, 0);
+        }
+        /* generated in /www/sites/nightshade.elated-themes.com/files/html/wp-content/themes/nightshade/functions.php nightshade_elated_content_padding_top function */
+
+        .page-id-933 .eltdf-content .eltdf-content-inner > .eltdf-container > .eltdf-container-inner,
+        .page-id-933 .eltdf-content .eltdf-content-inner > .eltdf-full-width > .eltdf-full-width-inner {
+            padding-top: 0px !important;
+        }
+    </style>
+    <link href="~/Content/New folder/wp-content/plugins/js_composer/assets/css/js_composer.min7661.css" rel="stylesheet" />
+    <script src="~/Content/New folder/wp-includes/js/jquery/jqueryb8ff.js"></script>
+</head>
+
+<body class="page-template page-template-full-width page-template-full-width-php page page-id-933 eltd-core-1.0 eltdf-social-login-1.0 nightshade-ver-1.0 eltdf-grid-1300 eltdf-light-header eltdf-no-behavior eltdf-dropdown-default eltdf-header-minimal eltdf-menu-area-shadow-disable eltdf-menu-area-in-grid-shadow-disable eltdf-menu-area-border-disable eltdf-menu-area-in-grid-border-disable eltdf-logo-area-border-disable eltdf-logo-area-in-grid-border-disable eltdf-header-vertical-shadow-disable eltdf-header-vertical-border-disable eltdf-side-menu-slide-from-right eltdf-woocommerce-columns-2 eltdf-woo-normal-space eltdf-woo-pl-info-below-image eltdf-woo-single-thumb-below-image eltdf-woo-single-has-pretty-photo eltdf-default-mobile-header eltdf-sticky-up-mobile-header wpb-js-composer js-comp-ver-5.4.2 vc_responsive eltdf-fullscreen-search eltdf-search-fade eltdf-fade-push-text-right" itemscope itemtype="http://schema.org/WebPage">
+    <section class="eltdf-side-menu">
+        <div class="eltdf-close-side-menu-holder">
+            <a class="eltdf-close-side-menu" href="#" target="_self">
+                <span aria-hidden="true" class="eltdf-icon-font-elegant icon_close "></span>
+            </a>
+        </div>
+
+    </section>
+    <div class="eltdf-wrapper">
+        <div class="eltdf-wrapper-inner">
+            <header class="eltdf-page-header">
+
+                <div class="eltdf-menu-area">
+
+                    <div class="eltdf-vertical-align-containers">
+                        <div class="eltdf-position-left">
+                            <!--
+                            -->
+                            <div class="eltdf-position-left-inner">
+
+                                <div class="eltdf-logo-wrapper">
+                                    <a itemprop="url" href="~/Home/Index" style="height: 57px;">
+                                        <img itemprop="image" class="eltdf-normal-logo" src="~/Content/First/images/logo.png" width="347" height="114" alt="logo" />
+                                        <img itemprop="image" class="eltdf-dark-logo" src="~/Content/First/images/logo.png" width="347" height="114" alt="dark logo" /> <img itemprop="image" class="eltdf-light-logo" src="~/Content/First/images/logo.png" width="347" height="114" alt="light logo" />
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="eltdf-position-right">
+                            <!--
+                            -->
+                            <div class="eltdf-position-right-inner">
+                                <a href="javascript:void(0)" class="eltdf-fullscreen-menu-opener">
+                                    <span class="eltdf-fm-lines">
+                                        <span class="eltdf-fm-line eltdf-line-1"></span>
+                                        <span class="eltdf-fm-line eltdf-line-2"></span>
+                                        <span class="eltdf-fm-line eltdf-line-3"></span>
+                                        <span class="eltdf-fm-line eltdf-line-4"></span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header>
+            <header class="eltdf-mobile-header">
+
+                <div class="eltdf-mobile-header-inner">
+                    <div class="eltdf-mobile-header-holder">
+                        <div class="eltdf-grid">
+                            <div class="eltdf-vertical-align-containers">
+                                <div class="eltdf-position-left">
+                                    <div class="eltdf-position-left-inner">
+
+                                        <div class="eltdf-mobile-logo-wrapper">
+                                            <a itemprop="url" href="../index.html" style="height: 57px">
+                                                <img itemprop="image" src="../wp-content/uploads/2017/11/default-logo.png" width="347" height="114" alt="Mobile Logo" />
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="eltdf-position-right">
+                                    <div class="eltdf-position-right-inner">
+                                        <a href="javascript:void(0)" class="eltdf-fullscreen-menu-opener">
+                                            <span class="eltdf-fm-lines">
+                                                <span class="eltdf-fm-line eltdf-line-1"></span>
+                                                <span class="eltdf-fm-line eltdf-line-2"></span>
+                                                <span class="eltdf-fm-line eltdf-line-3"></span>
+                                                <span class="eltdf-fm-line eltdf-line-4"></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </header>
+
+            <!--    <a id='eltdf-back-to-top' href='#'>
+                    <span class="eltdf-back-to-top-text">back to top</span>
+                    <span class="eltdf-icon-stack">
+                         <span class="arrow_carrot-right"></span>
+                    </span>
+                </a>-->
+            <div class="eltdf-fullscreen-menu-holder-outer">
+                <div class="eltdf-fullscreen-menu-holder">
+                    <div class="eltdf-fullscreen-menu-holder-inner">
+                        <nav class="eltdf-fullscreen-menu">
+                            <ul id="menu-fullscreen-menu" class="">
+                                <li id="popup-menu-item-4788" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children eltdf-active-item has_sub">
+                                    <a href="#" class=" current " style="animation-delay: 70ms;"><span>Main Page</span></a>
+                                    <ul class="sub_menu" style="">
+                                        <li id="popup-menu-item-4800" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home "><a href="../index.html" class=""><span>@Html.ActionLink("Home", "Index", "Home")</span></a></li>
+                                        <li id="popup-menu-item-4798" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../justified-gallery/index.html" class=""><span>@Html.ActionLink("About", "About", "Home")</span></a></li>
+                                        <li id="popup-menu-item-4798" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../justified-gallery/index.html" class=""><span>@Html.ActionLink("Contact", "Contact", "Home")</span></a></li>
+                                    </ul>
+                                </li>
+                                @{
+                                    if (User.Identity.IsAuthenticated)
+                                    {
+                                        <li id="popup-menu-item-4813" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../standard-list/index.html" class="" style="animation-delay: 420ms;"><span>@Html.ActionLink("Following", "Edit", "Players")</span></a></li>
+                                    }
+                                }
+                                @{
+                                    if (User.IsInRole("Admin"))
+                                    {
+                                        <li id="popup-menu-item-4813" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../standard-list/index.html" class="" style="animation-delay: 420ms;"><span>@Html.ActionLink("Visters", "index", "Visters")</span></a></li>
+                                        <li id="popup-menu-item-4813" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../standard-list/index.html" class="" style="animation-delay: 420ms;"><span>@Html.ActionLink("Players", "index", "Players")</span></a></li>
+                                    }
+                                }
+
+                                @{
+                                    if (User.IsInRole("Player"))
+                                    {
+                                        <li id="popup-menu-item-4813" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../standard-list/index.html" class="" style="animation-delay: 420ms;"><span>@Html.ActionLink("Profile", "Edit", "Players", new { id = @User.Identity.GetUserId() }, null)</span></a></li>
+                                    }
+                                }
+                                <li id="popup-menu-item-4813" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="../standard-list/index.html" class="" style="animation-delay: 420ms;"><span>@Html.Partial("_LoginPartial")</span></a></li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                    <a class="eltdf-fullscreen-menu-close" href="javascript:void(0)">
+                        <span class="icon_close"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="eltdf-content" style="margin-top: -90px">
+                <div class="eltdf-content-inner">
+                    <div class="eltdf-full-width">
+                        <div class="eltdf-full-width-inner">
+                            <div class="eltdf-grid-row">
+                                <div class="eltdf-page-content-holder eltdf-grid-col-12">
+                                    <div data-parallax-bg-image=/Files/PlayerPage/@Model.Imags.Name data-parallax-bg-speed="1.5" class="vc_row wpb_row vc_row-fluid vc_row-o-full-height vc_row-o-columns-middle vc_row-o-content-middle vc_row-flex eltdf-parallax-row-holder">
+                                        <div class="wpb_column vc_column_container vc_col-sm-12">
+                                            <div class="vc_column-inner ">
+                                                <div class="wpb_wrapper">
+                                                    <div class="eltdf-elements-holder   eltdf-one-column  eltdf-responsive-mode-768 ">
+                                                        <div class="eltdf-eh-item    " data-item-class="eltdf-eh-custom-7916" data-1280-1600="0 8% 0 43%" data-1024-1280="0 5% 0 43%" data-768-1024="14% 8% 15% 50%" data-680-768="15% 10% 17% 44%" data-680="26% 2% 29% 13%">
+                                                            <div class="eltdf-eh-item-inner">
+                                                                <div class="eltdf-eh-item-content eltdf-eh-custom-7916" style="padding: 0 12% 1% 53%">
+                                                                    <div class="eltdf-section-title-holder  ">
+                                                                        <div class="eltdf-st-inner">
+
+                                                                            <h1 class="eltdf-st-title" style="color: rgba(255,255,255,0.3)">
+                                                                                About Me
+                                                                            </h1>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wpb_text_column wpb_content_element  vc_custom_1509541592464">
+                                                                        <div class="wpb_wrapper" style="color: #515151;height:200px;overflow: hidden;">
+                                                                            <p>
+                                                                                <span style="color: #ffffff;">
+                                                                                    
+                                                                                    <span >@Model.Players.Detail </span>
+                                                                                    <br />
+                                                                                </span>
+                                                                            </p>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <br/>
+                                                                    <a itemprop="url" href="~/PlayerHomeController/Details/@Model.Players.PlayerId" target="_self" style="color: #000000;background-color: #ffffff;border-color: #ffffff" class="eltdf-btn eltdf-btn-medium eltdf-btn-solid eltdf-btn-custom-hover-bg eltdf-btn-custom-border-hover eltdf-btn-custom-hover-color" data-hover-color="#ffffff" data-hover-bg-color="rgba(255,255,255,0.01)" data-hover-border-color="#ffffff">
+                                                                      
+                                                                        <span class="eltdf-btn-text">Read More</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-parallax-bg-image="/Content/First/images/1.jpg" data-parallax-bg-speed="1.5" class="vc_row wpb_row vc_row-fluid vc_row-o-full-height vc_row-o-columns-middle vc_row-o-content-middle vc_row-flex eltdf-parallax-row-holder">
+                                        <div class="wpb_column vc_column_container vc_col-sm-12">
+                                            <div class="vc_column-inner ">
+                                                <div class="wpb_wrapper">
+                                                    <div class="eltdf-elements-holder   eltdf-one-column  eltdf-responsive-mode-768 ">
+                                                        <div class="eltdf-eh-item    " data-item-class="eltdf-eh-custom-9320" data-1280-1600="0 45% 0 6%" data-1024-1280="0 42% 0 6%" data-768-1024="14% 48% 15% 10%" data-680-768="15% 50% 17% 10%" data-680="26% 28% 29% 10%">
+                                                            <div class="eltdf-eh-item-inner">
+                                                                <div class="eltdf-eh-item-content eltdf-eh-custom-9320" style="padding: 0 49% 1% 16%">
+                                                                    <div class="eltdf-section-title-holder  ">
+                                                                        <div class="eltdf-st-inner">
+                                                                            @*<span class="eltdf-st-subtitle" style="color: #000000"><span class="eltdf-line"></span>Photoset </span>
+                                                                            <h1 class="eltdf-st-title" style="color: rgba(0,0,0,0.3)">
+                                                                                Blissful Times
+                                                                            </h1>*@
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wpb_text_column wpb_content_element  vc_custom_1509541592464">
+                                                                        <div class="wpb_wrapper">
+                                                                            @*<p>
+                                                                                <span style="color: #ffffff;">
+                                                                                    <span style="color: #515151;">Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vergasit vestibulum lorem ipsum lorenita lorena nullam. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</span>
+                                                                                    <br />
+                                                                                </span>
+                                                                            </p>*@
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <a itemprop="url" href="~/PlayerHomeController/Photos/@Model.Players.PlayerId" target="_self" style="color: #ffffff;background-color: #000000;border-color: #000000" class="eltdf-btn eltdf-btn-medium eltdf-btn-solid eltdf-btn-custom-hover-bg eltdf-btn-custom-border-hover eltdf-btn-custom-hover-color" data-hover-color="#000000" data-hover-bg-color="rgba(0,0,0,0.01)" data-hover-border-color="#000000">
+                                                                        <span class="eltdf-btn-text">View More</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-parallax-bg-image="/Content/First/images/3.jpg" data-parallax-bg-speed="1.5" class="vc_row wpb_row vc_row-fluid vc_row-o-full-height vc_row-o-columns-middle vc_row-o-content-middle vc_row-flex eltdf-parallax-row-holder">
+                                        <div class="wpb_column vc_column_container vc_col-sm-12">
+                                            <div class="vc_column-inner ">
+                                                <div class="wpb_wrapper">
+                                                    <div class="eltdf-elements-holder   eltdf-one-column  eltdf-responsive-mode-768 ">
+                                                        <div class="eltdf-eh-item    " data-item-class="eltdf-eh-custom-1144" data-1280-1600="0 8% 0 43%" data-1024-1280="0 5% 0 43%" data-768-1024="14% 8% 15% 50%" data-680-768="15% 10% 17% 44%" data-680="26% 2% 29% 30%">
+                                                            <div class="eltdf-eh-item-inner">
+                                                                <div class="eltdf-eh-item-content eltdf-eh-custom-1144" style="padding: 0 12% 1% 53%">
+                                                                    <div class="eltdf-section-title-holder  ">
+                                                                        <div class="eltdf-st-inner">
+                                                                            @*<span class="eltdf-st-subtitle" style="color: #ffffff"><span class="eltdf-line"></span>Imagery </span>
+                                                                            <h1 class="eltdf-st-title" style="color: rgba(255,255,255,0.3)">
+                                                                                Nuanced Style
+                                                                            </h1>*@
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wpb_text_column wpb_content_element  vc_custom_1509541603468">
+                                                                        @*<div class="wpb_wrapper">
+                                                                            <p><span style="color: #ffffff;">Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vergasit vestibulum lorem ipsum lorenita lorena nullam. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</span></p>
+
+                                                                        </div>*@
+                                                                    </div>
+                                                                    <a itemprop="url" href="~/PlayerHomeController/Videos" target="_self" style="color: #000000;background-color: #ffffff;border-color: #ffffff" class="eltdf-btn eltdf-btn-medium eltdf-btn-solid eltdf-btn-custom-hover-bg eltdf-btn-custom-border-hover eltdf-btn-custom-hover-color" data-hover-color="#ffffff" data-hover-bg-color="rgba(255,255,255,0.01)" data-hover-border-color="#ffffff">
+                                                                        <span class="eltdf-btn-text">View More</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-parallax-bg-image="/Content/First/images/2.jpg" data-parallax-bg-speed="1.5" class="vc_row wpb_row vc_row-fluid vc_row-o-full-height vc_row-o-columns-middle vc_row-o-content-middle vc_row-flex eltdf-parallax-row-holder">
+                                        <div class="wpb_column vc_column_container vc_col-sm-12">
+                                            <div class="vc_column-inner ">
+                                                <div class="wpb_wrapper">
+                                                    <div class="eltdf-elements-holder   eltdf-one-column  eltdf-responsive-mode-768 ">
+                                                        <div class="eltdf-eh-item    " data-item-class="eltdf-eh-custom-3719" data-1280-1600="0 45% 0 6%" data-1024-1280="0 42% 0 6%" data-768-1024="14% 48% 15% 10%" data-680-768="15% 50% 17% 10%" data-680="26% 31% 29% 7%">
+                                                            <div class="eltdf-eh-item-inner">
+                                                                <div class="eltdf-eh-item-content eltdf-eh-custom-3719" style="padding: 0 49% 1% 16%">
+                                                                    <div class="eltdf-section-title-holder  ">
+                                                                        <div class="eltdf-st-inner">
+                                                                            @*<span class="eltdf-st-subtitle" style="color: #000000"><span class="eltdf-line"></span>Photo-shoot </span>
+                                                                            <h1 class="eltdf-st-title" style="color: rgba(0,0,0,0.3)">
+                                                                                True Allure
+                                                                            </h1>*@
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wpb_text_column wpb_content_element  vc_custom_1509541610208">
+                                                                        <div class="wpb_wrapper">
+                                                                            @*<p>
+                                                                                <span style="color: #ffffff;">
+                                                                                    <span style="color: #515151;">Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vergasit vestibulum lorem ipsum lorenita lorena nullam. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</span>
+                                                                                    <br />
+                                                                                </span>
+                                                                            </p>*@
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <a itemprop="url" href="~/PlayerHomeController/Articals" target="_self" style="color: #ffffff;background-color: #000000;border-color: #000000" class="eltdf-btn eltdf-btn-medium eltdf-btn-solid eltdf-btn-custom-hover-bg eltdf-btn-custom-border-hover eltdf-btn-custom-hover-color" data-hover-color="#000000" data-hover-bg-color="rgba(0,0,0,0.01)" data-hover-border-color="#000000">
+                                                                        <span class="eltdf-btn-text">View More</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="eltdf-row-grid-section-wrapper eltdf-content-aligment-center" style="background-color:#111111 ;height:200px">
+                                        @*<div class="eltdf-row-grid-section">
+                                            <div class="vc_row wpb_row vc_row-fluid vc_row-o-full-height vc_row-o-columns-middle vc_row-flex">
+                                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                                    <div class="vc_column-inner ">
+                                                        <div class="wpb_wrapper">
+                                                            <div class="eltdf-elements-holder   eltdf-one-column  eltdf-responsive-mode-768 ">
+                                                                <div class="eltdf-eh-item   eltdf-horizontal-alignment-center " data-item-class="eltdf-eh-custom-3240" data-1280-1600="0 24% 2%" data-1024-1280="0 20% 2% 20%" data-768-1024="0 13% 2%" data-680-768="0 10% 2%" data-680="30% 10% 2% 10%">
+                                                                    <div class="eltdf-eh-item-inner">
+                                                                        <div class="eltdf-eh-item-content eltdf-eh-custom-3240" style="padding: 0 23% 2% 23%">
+
+                                                                            <div class="wpb_single_image wpb_content_element vc_align_center">
+
+                                                                                <figure class="wpb_wrapper vc_figure">
+                                                                                    <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="212" height="92" src="~/Content/First/images/logo.png" class="vc_single_image-img attachment-full" alt="logo-footer" /></div>
+                                                                                </figure>
+                                                                            </div>
+                                                                            <div class="eltdf-separator-holder clearfix  eltdf-separator-center ">
+                                                                                <div class="eltdf-separator" style="border-color: #ffffff;width: 25px;border-bottom-width: 5px;margin-top: 33px;margin-bottom: 14px"></div>
+                                                                            </div>
+
+                                                                            <div class="wpb_text_column wpb_content_element ">
+                                                                                <div class="wpb_wrapper"> </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- close div.content_inner -->
+            </div>
+            <!-- close div.content -->
+            <footer class="eltdf-page-footer" >
+                <div class="eltdf-footer-bottom-holder"style="background-color:#111111">
+                    <div class="eltdf-footer-bottom-inner eltdf-grid " style="width:auto">
+                        <div class="eltdf-grid-row ">
+                            <div class="eltdf-grid-col-12">
+                                <div id="text-6" class="widget eltdf-footer-bottom-column-1 widget_text">
+                                    <div class="textwidget">
+                                        <p>@DateTime.Now.Year - Copyright FootBallPlayers All Rights Reserved</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+    </div>
+    
+
+    <script src="~/Content/New folder/wp-content/themes/nightshade/assets/js/modules.min7bcd.js"></script>
+    <script src="~/Content/New folder/wp-includes/js/mediaelement/mediaelement-and-player.min51cd.js"></script>
+    <script src="~/Content/New folder/wp-content/themes/nightshade/assets/js/modules/plugins/fluidvids.min7bcd.js"></script>
+    <script src="~/Content/New folder/wp-content/plugins/js_composer/assets/lib/prettyphoto/js/jquery.prettyPhoto.min7661.js"></script>
+    <script src="~/Content/New folder/wp-content/themes/nightshade/assets/js/modules/plugins/jquery.nicescroll.min7bcd.js"></script> 
+    <script src="~/Content/New folder/wp-content/themes/nightshade/assets/js/modules/plugins/parallax.min7bcd.js"></script> 
+</body>
+
+
+
+</html>

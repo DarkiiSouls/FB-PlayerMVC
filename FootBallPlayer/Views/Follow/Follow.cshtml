@@ -1,0 +1,13 @@
+﻿@model  FootBallPlayer.Models.Follower
+@{ 
+    Layout = null;
+}
+@using (@Html.BeginForm("Follow", "Follow", FormMethod.Post, new { id = "follow-btn", @class = "follow-btn" }))
+
+{
+    @Html.AntiForgeryToken()
+    <a class="" href="javascript:document.getElementById('follow-btn').submit()">
+        @ViewBag.stat
+    </a>
+}
+
