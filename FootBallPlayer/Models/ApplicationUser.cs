@@ -12,6 +12,7 @@ namespace FootBallPlayer.Models
         public string NiceName { get; set; }
         public string YourName { get; set; }
         public string PhoneNum { get; set; }
+        //public string Sifre { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

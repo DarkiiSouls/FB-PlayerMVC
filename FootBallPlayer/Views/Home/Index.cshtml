@@ -95,7 +95,7 @@
                             <h1 style="text-align: center;"><span style="font-size: 14px; color: #333333;"><span style="font-family: montserrat;"><span style="letter-spacing: 4px;">Number Of Users</span></span></span></h1>
                         </div> <div class="zn_separator clearfix eluidd5a4c376 zn_separator--icon-no "></div>
 
-                        <div class="zn-counterElm eluidf90317db text-center  zn-counterElm-fadeIn is-appeared" data-zn-count="{&quot;from&quot;:&quot;0&quot;,&quot;to&quot;:&quot;23&quot;,&quot;speed&quot;:&quot;3000&quot;,&quot;refreshInterval&quot;:&quot;50&quot;,&quot;decimals&quot;:&quot;0&quot;}"> @Model.Vister.Count() </div>
+                        <div class="zn-counterElm eluidf90317db text-center  zn-counterElm-fadeIn is-appeared" data-zn-count="{&quot;from&quot;:&quot;0&quot;,&quot;to&quot;:&quot;23&quot;,&quot;speed&quot;:&quot;3000&quot;,&quot;refreshInterval&quot;:&quot;50&quot;,&quot;decimals&quot;:&quot;0&quot;}">  @{ int x = Model.Vister.Count() + @Model.Players.Count(); }  @x </div>
                     </div>
                 </div>
 

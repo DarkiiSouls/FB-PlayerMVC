@@ -9,6 +9,8 @@ namespace FootBallPlayer
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
+            app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
         }
     }
 }
