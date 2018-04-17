@@ -205,6 +205,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\LogInController.cs" />
     <Compile Include="Controllers\Api\PlayersController.cs" />
+    <Compile Include="Controllers\ArticalsController.cs" />
     <Compile Include="Controllers\FollowController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -217,6 +218,10 @@
     <Compile Include="Migrations\201804151645282_d.cs" />
     <Compile Include="Migrations\201804151645282_d.Designer.cs">
       <DependentUpon>201804151645282_d.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171611301_articals.cs" />
+    <Compile Include="Migrations\201804171611301_articals.Designer.cs">
+      <DependentUpon>201804171611301_articals.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -671,6 +676,11 @@
     <Content Include="Views\PlayerHomeController\Photos.cshtml" />
     <Content Include="Views\PlayerHomeController\Videos.cshtml" />
     <Content Include="Views\PlayerHomeController\Details.cshtml" />
+    <Content Include="Views\Articals\Create.cshtml" />
+    <Content Include="Views\Articals\Delete.cshtml" />
+    <Content Include="Views\Articals\Details.cshtml" />
+    <Content Include="Views\Articals\Edit.cshtml" />
+    <Content Include="Views\Articals\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -695,6 +705,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201804151645282_d.resx">
       <DependentUpon>201804151645282_d.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171611301_articals.resx">
+      <DependentUpon>201804171611301_articals.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

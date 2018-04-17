@@ -3,211 +3,80 @@
     ViewBag.Title = "Photos";
     Layout = "~/Views/Shared/_PlayerLayout.cshtml";
 }
-        <div class="eltdf-full-width" style="margin-top:10px;position: inherit">
-            <div class="eltdf-full-width-inner">
-                <div class="eltdf-grid-row">
-                    <div class="eltdf-page-content-holder eltdf-grid-col-12 " style="margin-top:15px">
+@using Microsoft.AspNet.Identity
+<div class="eltdf-full-width" style="margin-top:10px;position: inherit">
+    <div class="eltdf-full-width-inner">
+        <div style="margin-top:20px;right:30px;position:absolute">
+            @if (User.Identity.IsAuthenticated)
+    {
 
-                        <div class="vc_row wpb_row vc_row-fluid">
-                            <div class="wpb_column vc_column_container vc_col-sm-12">
-                                <div class="vc_column-inner ">
-                                    <div class="wpb_wrapper">
-                                        <div class="eltdf-portfolio-list-holder eltdf-pl-masonry eltdf-no-space eltdf-pl-four-columns eltdf-pl-gallery-overlay eltdf-pl-images-fixed   eltdf-pl-pag-no-pagination        " data-type=masonry data-number-of-columns=4 data-space-between-items=no data-number-of-items=-1 data-space-between-items-justified=small data-image-proportions=full data-enable-fixed-proportions=yes data-enable-image-shadow=no data-category=lifestyle data-orderby=date data-order=ASC data-item-style=gallery-overlay data-item-style-justified=gallery-overlay data-enable-title=yes data-title-tag=h3 data-enable-category=yes data-enable-count-images=yes data-enable-excerpt=no data-excerpt-length=20 data-pagination-type=no-pagination data-filter=no data-filter-order-by= name data-enable-article-animation=no data-enable-parallax-animation=no data-article-mask-color=#fff data-portfolio-slider-on=no data-enable-fullheight=yes data-portfolio-slider-full-height-decrease=yes data-enable-loop=yes data-enable-autoplay=yes data-slider-speed=5000 data-slider-speed-animation=600 data-enable-navigation=yes data-enable-pagination=yes data-max-num-pages=0 data-next-page=2>
-                                            <div class="eltdf-pl-inner eltdf-outer-space clearfix">
-                                                @if (Model.Images.Count() == 0)
-                                                {
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.PlayerUserId })">*@
+        <a href="" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" data-upgraded=",MaterialButton,MaterialRipple" style="margin-right:0">
+            <i class="material-icons mdl-color-text--white" role="presentation"  ><input type="file"  /></i>
+        </a>
+        
+}
+        </div>
+        <div class="eltdf-grid-row">
+            <div class="eltdf-page-content-holder eltdf-grid-col-12 " style="margin-top:15px">
 
-                                                }
-                                                else
-                                                {
-                                                   for (int i = 0; i < Model.Images.Count; i++)
-                                                    {
-                                                        <div class="eltdf-pl-grid-sizer"></div>
-                                                        <div class="eltdf-pl-grid-gutter"></div>
-                                                        <article class="eltdf-pl-item eltdf-item-space eltdf-pl-masonry-default post-83 portfolio-item type-portfolio-item status-publish has-post-thumbnail hentry portfolio-category-lifestyle portfolio-tag-black-white portfolio-tag-fashion portfolio-tag-portraits">
-                                                            <div class="eltdf-pl-item-inner">
-                                                                <div class="eltdf-pli-image">
-                                                                    <img width="550" height="550" src="~/Files/PlayerPage/@Model.Images[i].Name" class="attachment-nightshade_elated_square size-nightshade_elated_square wp-post-image" alt="a" />
+                <div class="vc_row wpb_row vc_row-fluid">
+                    <div class="wpb_column vc_column_container vc_col-sm-12">
+                        <div class="vc_column-inner ">
+                            <div class="wpb_wrapper">
+                                <div class="eltdf-portfolio-list-holder eltdf-pl-masonry eltdf-no-space eltdf-pl-four-columns eltdf-pl-gallery-overlay eltdf-pl-images-fixed   eltdf-pl-pag-no-pagination        " data-type=masonry data-number-of-columns=4 data-space-between-items=no data-number-of-items=-1 data-space-between-items-justified=small data-image-proportions=full data-enable-fixed-proportions=yes data-enable-image-shadow=no data-category=lifestyle data-orderby=date data-order=ASC data-item-style=gallery-overlay data-item-style-justified=gallery-overlay data-enable-title=yes data-title-tag=h3 data-enable-category=yes data-enable-count-images=yes data-enable-excerpt=no data-excerpt-length=20 data-pagination-type=no-pagination data-filter=no data-filter-order-by= name data-enable-article-animation=no data-enable-parallax-animation=no data-article-mask-color=#fff data-portfolio-slider-on=no data-enable-fullheight=yes data-portfolio-slider-full-height-decrease=yes data-enable-loop=yes data-enable-autoplay=yes data-slider-speed=5000 data-slider-speed-animation=600 data-enable-navigation=yes data-enable-pagination=yes data-max-num-pages=0 data-next-page=2>
+
+                                    <div class="eltdf-pl-inner eltdf-outer-space clearfix">
+
+                                        @if (Model.Images.Count() == 0)
+                                    {
+
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < Model.Images.Count; i++)
+                                        {
+                                            <div class="eltdf-pl-grid-sizer"></div>
+                                            <div class="eltdf-pl-grid-gutter"></div>
+
+                                            <article class="eltdf-pl-item eltdf-item-space eltdf-pl-masonry-large-width post-120 portfolio-item type-portfolio-item status-publish has-post-thumbnail hentry portfolio-category-lifestyle portfolio-tag-black-white portfolio-tag-fashion portfolio-tag-portraits">
+                                                <div class="eltdf-pl-item-inner">
+                                                    <div class="eltdf-pli-image">
+                                                        <img width="1100" height="550" src="~/Files/PlayerPage/@Model.Images[i].Name" class="attachment-nightshade_elated_landscape size-nightshade_elated_landscape wp-post-image" alt="a" />
+                                                    </div>
+                                                    <div class="eltdf-pli-text-holder">
+                                                        <div class="eltdf-pli-text-wrapper">
+                                                            <div class="eltdf-pli-text">
+                                                                <h3 itemprop="name" class="eltdf-pli-title entry-title">
+                                                                    Decorations		<span class="eltdf-pli-line"></span>
+                                                                </h3>
+
+                                                                <div class="eltdf-pli-category-holder">
+                                                                    <a itemprop="url" class="eltdf-pli-category" href="~/Files/PlayerPage/@Model.Images[i].Name">Lifestyle</a>
                                                                 </div>
-                                                                <div class="eltdf-pli-text-holder">
-                                                                    <div class="eltdf-pli-text-wrapper">
-                                                                        <div class="eltdf-pli-text">
-                                                                            <h3 itemprop="name" class="eltdf-pli-title entry-title">
-                                                                                Flower Power		<span class="eltdf-pli-line"></span>
-                                                                            </h3>
-
-                                                                            <div class="eltdf-pli-category-holder">
-                                                                                <a itemprop="url" class="eltdf-pli-category" href="~/Files/PlayerPage/@Model.Images[i].Name">Lifestyle</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <a itemprop="url" class="eltdf-pli-link eltdf-block-drag-link" href="~/Files/PlayerPage/@Model.Images[i].Name" target="_self"></a>
                                                             </div>
-                                                        </article>
-                                                        <article class="eltdf-pl-item eltdf-item-space eltdf-pl-masonry-large-width post-120 portfolio-item type-portfolio-item status-publish has-post-thumbnail hentry portfolio-category-lifestyle portfolio-tag-black-white portfolio-tag-fashion portfolio-tag-portraits">
-                                                            <div class="eltdf-pl-item-inner">
-                                                                <div class="eltdf-pli-image">
-                                                                    <img width="1100" height="550" src="~/Files/PlayerPage/@Model.Images[i].Name" class="attachment-nightshade_elated_landscape size-nightshade_elated_landscape wp-post-image" alt="a" />
-                                                                </div>
-                                                                <div class="eltdf-pli-text-holder">
-                                                                    <div class="eltdf-pli-text-wrapper">
-                                                                        <div class="eltdf-pli-text">
-                                                                            <h3 itemprop="name" class="eltdf-pli-title entry-title">
-                                                                                Decorations		<span class="eltdf-pli-line"></span>
-                                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <a itemprop="url" class="eltdf-pli-link eltdf-block-drag-link" href="~/Files/PlayerPage/@Model.Images[i].Name" target="_self"></a>
+                                                </div>
+                                            </article>
 
-                                                                            <div class="eltdf-pli-category-holder">
-                                                                                <a itemprop="url" class="eltdf-pli-category" href="~/Files/PlayerPage/@Model.Images[i].Name">Lifestyle</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <a itemprop="url" class="eltdf-pli-link eltdf-block-drag-link" href="~/Files/PlayerPage/@Model.Images[i].Name" target="_self"></a>
-                                                            </div>
-                                                        </article>
-                                                        <article class="eltdf-pl-item eltdf-item-space eltdf-pl-masonry-large-height post-121 portfolio-item type-portfolio-item status-publish has-post-thumbnail hentry portfolio-category-lifestyle portfolio-tag-black-white portfolio-tag-fashion portfolio-tag-portraits">
-                                                            <div class="eltdf-pl-item-inner">
-                                                                <div class="eltdf-pli-image">
-                                                                    <img width="550" height="1100" src="~/Files/PlayerPage/@Model.Images[i].Name" class="attachment-nightshade_elated_portrait size-nightshade_elated_portrait wp-post-image" alt="a" />
-                                                                </div>
-                                                                <div class="eltdf-pli-text-holder">
-                                                                    <div class="eltdf-pli-text-wrapper">
-                                                                        <div class="eltdf-pli-text">
-                                                                            <h3 itemprop="name" class="eltdf-pli-title entry-title">
-                                                                                Natural Beauty		<span class="eltdf-pli-line"></span>
-                                                                            </h3>
-
-                                                                            <div class="eltdf-pli-category-holder">
-                                                                                <a itemprop="url" class="eltdf-pli-category" href="~/Files/PlayerPage/@Model.Images[i].Name">Lifestyle</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <a itemprop="url" class="eltdf-pli-link eltdf-block-drag-link" href="~/Files/PlayerPage/@Model.Images[i].Name" target="_self"></a>
-                                                            </div>
-                                                        </article>
-                                                        <article class="eltdf-pl-item eltdf-item-space eltdf-pl-masonry-large-height post-122 portfolio-item type-portfolio-item status-publish has-post-thumbnail hentry portfolio-category-lifestyle portfolio-tag-black-white portfolio-tag-fashion portfolio-tag-portraits">
-                                                            <div class="eltdf-pl-item-inner">
-                                                                <div class="eltdf-pli-image">
-                                                                    <img width="550" height="1100" src="~/Files/PlayerPage/@Model.Images[i].Name" class="attachment-nightshade_elated_portrait size-nightshade_elated_portrait wp-post-image" alt="a" />
-                                                                </div>
-                                                                <div class="eltdf-pli-text-holder">
-                                                                    <div class="eltdf-pli-text-wrapper">
-                                                                        <div class="eltdf-pli-text">
-                                                                            <h3 itemprop="name" class="eltdf-pli-title entry-title">
-                                                                                Black&#038;White		<span class="eltdf-pli-line"></span>
-                                                                            </h3>
-
-                                                                            <div class="eltdf-pli-category-holder">
-                                                                                <a itemprop="url" class="eltdf-pli-category" href="~/Files/PlayerPage/@Model.Images[i].Name">Lifestyle</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <a itemprop="url" class="eltdf-pli-link eltdf-block-drag-link" href="~/Files/PlayerPage/@Model.Images[i].Name" target="_self"></a>
-                                                            </div>
-                                                        </article>
-                                                        <article class="eltdf-pl-item eltdf-item-space eltdf-pl-masonry-default post-123 portfolio-item type-portfolio-item status-publish has-post-thumbnail hentry portfolio-category-lifestyle">
-                                                            <div class="eltdf-pl-item-inner">
-                                                                <div class="eltdf-pli-image">
-                                                                    <img width="550" height="550" src="~/Files/PlayerPage/@Model.Images[i].Name" class="attachment-nightshade_elated_square size-nightshade_elated_square wp-post-image" alt="a" />
-                                                                </div>
-                                                                <div class="eltdf-pli-text-holder">
-                                                                    <div class="eltdf-pli-text-wrapper">
-                                                                        <div class="eltdf-pli-text">
-                                                                            <h3 itemprop="name" class="eltdf-pli-title entry-title">
-                                                                                Macro Flowers		<span class="eltdf-pli-line"></span>
-                                                                            </h3>
-
-                                                                            <div class="eltdf-pli-category-holder">
-                                                                                <a itemprop="url" class="eltdf-pli-category" href="~/Files/PlayerPage/@Model.Images[i].Name">Lifestyle</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <a itemprop="url" class="eltdf-pli-link eltdf-block-drag-link" href="~/Files/PlayerPage/@Model.Images[i].Name" target="_self"></a>
-                                                            </div>
-                                                        </article>
-                                                        <article class="eltdf-pl-item eltdf-item-space eltdf-pl-masonry-default post-129 portfolio-item type-portfolio-item status-publish has-post-thumbnail hentry portfolio-category-lifestyle">
-                                                            <div class="eltdf-pl-item-inner">
-                                                                <div class="eltdf-pli-image">
-                                                                    <img width="550" height="550" src="~/Files/PlayerPage/@Model.Images[i].Name" class="attachment-nightshade_elated_square size-nightshade_elated_square wp-post-image" alt="a" />
-                                                                </div>
-                                                                <div class="eltdf-pli-text-holder">
-                                                                    <div class="eltdf-pli-text-wrapper">
-                                                                        <div class="eltdf-pli-text">
-                                                                            <h3 itemprop="name" class="eltdf-pli-title entry-title">
-                                                                                Power of Eyes		<span class="eltdf-pli-line"></span>
-                                                                            </h3>
-
-                                                                            <div class="eltdf-pli-category-holder">
-                                                                                <a itemprop="url" class="eltdf-pli-category" href="~/Files/PlayerPage/@Model.Images[i].Name">Lifestyle</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <a itemprop="url" class="eltdf-pli-link eltdf-block-drag-link" href="~/Files/PlayerPage/@Model.Images[i].Name" target="_self"></a>
-                                                            </div>
-                                                        </article>
-                                                        <article class="eltdf-pl-item eltdf-item-space eltdf-pl-masonry-large-width post-130 portfolio-item type-portfolio-item status-publish has-post-thumbnail hentry portfolio-category-lifestyle">
-                                                            <div class="eltdf-pl-item-inner">
-                                                                <div class="eltdf-pli-image">
-                                                                    <img width="1100" height="550" src="~/Files/PlayerPage/@Model.Images[i].Name" class="attachment-nightshade_elated_landscape size-nightshade_elated_landscape wp-post-image" alt="a" />
-                                                                </div>
-                                                                <div class="eltdf-pli-text-holder">
-                                                                    <div class="eltdf-pli-text-wrapper">
-                                                                        <div class="eltdf-pli-text">
-                                                                            <h3 itemprop="name" class="eltdf-pli-title entry-title">
-                                                                                Dance		<span class="eltdf-pli-line"></span>
-                                                                            </h3>
-
-                                                                            <div class="eltdf-pli-category-holder">
-                                                                                <a itemprop="url" class="eltdf-pli-category" href="~/Files/PlayerPage/@Model.Images[i].Name">Lifestyle</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <a itemprop="url" class="eltdf-pli-link eltdf-block-drag-link" href="~/Files/PlayerPage/@Model.Images[i].Name" target="_self"></a>
-                                                            </div>
-                                                        </article>
-                                                        <article class="eltdf-pl-item eltdf-item-space eltdf-pl-masonry-default post-133 portfolio-item type-portfolio-item status-publish has-post-thumbnail hentry portfolio-category-lifestyle">
-                                                            <div class="eltdf-pl-item-inner">
-                                                                <div class="eltdf-pli-image">
-                                                                    <img width="550" height="550" src="~/Files/PlayerPage/@Model.Images[i].Name" class="attachment-nightshade_elated_square size-nightshade_elated_square wp-post-image" alt="a" />
-                                                                </div>
-                                                                <div class="eltdf-pli-text-holder">
-                                                                    <div class="eltdf-pli-text-wrapper">
-                                                                        <div class="eltdf-pli-text">
-                                                                            <h3 itemprop="name" class="eltdf-pli-title entry-title">
-                                                                                Madeline		<span class="eltdf-pli-line"></span>
-                                                                            </h3>
-
-                                                                            <div class="eltdf-pli-category-holder">
-                                                                                <a itemprop="url" class="eltdf-pli-category" href="~/Files/PlayerPage/@Model.Images[i].Name">Lifestyle</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <a itemprop="url" class="eltdf-pli-link eltdf-block-drag-link" href="~/Files/PlayerPage/@Model.Images[i].Name"target="_self"></a>
-                                                            </div>
-                                                        </article>
-                                                    }
-                                                }
+                                    }
+                                }
 
 
-                                            </div>
-
-                                        </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
+    </div>
+
+</div>
 
 <footer class="eltdf-page-footer">
 

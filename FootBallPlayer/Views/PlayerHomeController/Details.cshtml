@@ -49,6 +49,7 @@
                     <a href="/Players/Edit/@Model.Players.PlayerUserId" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" data-upgraded=",MaterialButton,MaterialRipple" style="margin-right:0">
                         <i class="material-icons mdl-color-text--white" role="presentation">add</i>
                     </a>
+
                 
                 }
                     <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
@@ -57,7 +58,9 @@
                         </div>
 
                         <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-                            <div>
+                            <div style="    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+    
+    border-radius: 10px;">
                                 <strong style="font-size:20px;padding:10px">@Html.Action("Follow", "Follow", new { id = Model.Players.PlayerUserId })</strong>
                             </div>
                             <div class="section-spacer"></div>
@@ -75,15 +78,15 @@
                                 <span class="visuallyhidden">share</span>
                             </div>
                         </div>
-                        <div style="display:inline;font-style: oblique; padding: 20px">
+                        <div style="display:inline;font-style: oblique; padding: 20px;box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);background-color:#f1f1ff">
 
                             <br />
 
-                            <h4><strong>@Html.DisplayNameFor(model => model.Players.Age):</strong> @Html.DisplayFor(model => model.Players.Age)</h4>
-                            <h4><strong>@Html.DisplayNameFor(model => model.Players.Height):</strong> @Html.DisplayFor(model => model.Players.Height) m</h4>
-                            <h4><strong>@Html.DisplayNameFor(model => model.Players.Weight):</strong> @Html.DisplayFor(model => model.Players.Weight) kg</h4>
-                            <h4><strong>@Html.DisplayNameFor(model => model.Players.Salary):</strong> @Html.DisplayFor(model => model.Players.Salary) million EUR (2016)</h4>
-                            <h4><strong>@Html.DisplayNameFor(model => model.Players.DataTime):</strong> @Html.DisplayFor(model => model.Players.DataTime)</h4>
+                            <h4><strong style="color:red">@Html.DisplayNameFor(model => model.Players.Age):</strong> @Html.DisplayFor(model => model.Players.Age)</h4>
+                            <h4><strong style="color:red">@Html.DisplayNameFor(model => model.Players.Height):</strong> @Html.DisplayFor(model => model.Players.Height) m</h4>
+                            <h4><strong style="color:red">@Html.DisplayNameFor(model => model.Players.Weight):</strong> @Html.DisplayFor(model => model.Players.Weight) kg</h4>
+                            <h4><strong style="color:red">@Html.DisplayNameFor(model => model.Players.Salary):</strong> @Html.DisplayFor(model => model.Players.Salary) million EUR (2016)</h4>
+                            <h4><strong style="color:red">@Html.DisplayNameFor(model => model.Players.DataTime):</strong> @Html.DisplayFor(model => model.Players.DataTime)</h4>
 
 
                         </div>
