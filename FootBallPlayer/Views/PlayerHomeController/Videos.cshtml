@@ -42,10 +42,20 @@
 
                 <h1 class="mbr-section-title py-3 mbr-fonts-style display-1">3 HTML Video Gallery Templates</h1>
 
-               
+
             </div>
         </div>
+        <div style="margin-top:20px;right:30px;position:absolute">
+            @if (User.Identity.IsAuthenticated)
+        {
 
+            @*@Html.ActionLink("Edit", "Edit", new { id = Model.PlayerUserId })">*@
+            <a href="" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" data-upgraded=",MaterialButton,MaterialRipple" style="margin-right:0">
+                <i class="material-icons mdl-color-text--white" role="presentation"><input type="file" /></i>
+            </a>
+
+    }
+        </div>
     </section>
 
     <section class="mbr-gallery mbr-slider-carousel cid-qvz0cgxPXY" id="gallery3-bl" data-rv-view="10940">

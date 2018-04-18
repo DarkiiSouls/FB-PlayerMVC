@@ -18,7 +18,7 @@ namespace FootBallPlayer.Controllers
         }
         public ActionResult Index()
         {
-            return View();
+            return View(db.Followers.ToList());
         }
         [HttpGet]
         public ActionResult Follow(string id)

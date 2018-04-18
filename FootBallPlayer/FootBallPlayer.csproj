@@ -681,6 +681,7 @@
     <Content Include="Views\Articals\Details.cshtml" />
     <Content Include="Views\Articals\Edit.cshtml" />
     <Content Include="Views\Articals\Index.cshtml" />
+    <Content Include="Views\Follow\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
