@@ -20,7 +20,7 @@
     <link href="~/Content/Second/css/themes/kallyas/css/print9dbb.css" rel="stylesheet" />
     <link href="~/Content/Second/css/uploads/sites/37/zn_dynamic1d92.css" rel="stylesheet" />
 
-    <link href="~/Content/Site.css" rel="stylesheet" />
+
     <style>
         .in {
             width: 13px;
@@ -36,18 +36,17 @@
             -webkit-transition: width 0.4s ease-in-out;
             transition: width 0.4s ease-in-out;
             float: right;
-            
         }
 
-            .in1:focus {
-                width: 300px;
-                border-top: 0;
-                border-right: 0;
-                border-left: 0;
-                border-bottom: 1px solid #ddd;
-            }
-
+        .in1:focus {
+            width: 300px;
+            border-top: 0;
+            border-right: 0;
+            border-left: 0;
+            border-bottom: 1px solid #ddd;
+        }
     </style>
+    <link href="~/Content/Site.css" rel="stylesheet" />
     <script src="~/Content/Second/js/jquery/jqueryb8ff.js"></script>
     <script src="~/Content/Second/css/plugins/revslider/public/assets/js/jquery.themepunch.tools.mina88c.js"></script>
     <script src="~/Content/Second/css/plugins/revslider/public/assets/js/jquery.themepunch.revolution.mina88c.js"></script>
@@ -71,29 +70,34 @@
                     <nav class="znSdHead-menuBrc" id="znSdHead-menuBrc"><a>all</a></nav>
                     <ul id="side-main-nav" class="side-main-nav znSdHead-menuList is-first nav-with-smooth-scroll">
                         <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46 znSdHead-menuList-item"><a href="#page_wrapper" class="znSdHead-menuList-link">@Html.ActionLink("Home", "Index", "Home")</a></li>
+
                         @{
-                            if (User.Identity.IsAuthenticated)
-                            {
-                                <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48 znSdHead-menuList-item"><a href="#eluidd85ca84f" class="znSdHead-menuList-link">@Html.ActionLink("Following", "index", "Follow")</a></li>
-                            }
+        if (User.Identity.IsAuthenticated)
+        {
+                    <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48 znSdHead-menuList-item"><a href="#eluidd85ca84f" class="znSdHead-menuList-link">@Html.ActionLink("Following", "index", "Follow")</a></li>
+}
                         }
                         @{
-                            if (User.IsInRole("Admin"))
-                            {
-                                <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48 znSdHead-menuList-item"><a href="#eluidd85ca84f" class="znSdHead-menuList-link">@Html.ActionLink("Visters", "index", "Visters")</a></li>
-                                <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48 znSdHead-menuList-item"><a href="#eluidd85ca84f" class="znSdHead-menuList-link">@Html.ActionLink("Players", "index", "Players")</a></li>
-                            }
+        if (User.IsInRole("Admin"))
+        {
+                    <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48 znSdHead-menuList-item"><a href="#eluidd85ca84f" class="znSdHead-menuList-link">@Html.ActionLink("Visters", "index", "Visters")</a></li>
+                    <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48 znSdHead-menuList-item"><a href="#eluidd85ca84f" class="znSdHead-menuList-link">@Html.ActionLink("Players", "index", "Players")</a></li>
+}
                         }
 
                         @{
-                            if (User.IsInRole("Player"))
-                            {
-                                <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48 znSdHead-menuList-item"><a href="#eluidd85ca84f" class="znSdHead-menuList-link">@Html.ActionLink("Profile", "Edit", "Players", new { id = @User.Identity.GetUserId() }, null)</a></li>
-                            }
+        if (User.IsInRole("Player"))
+        {
+                    <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48 znSdHead-menuList-item"><a href="#eluidd85ca84f" class="znSdHead-menuList-link">@Html.ActionLink("Profile", "Edit", "Players", new { id = @User.Identity.GetUserId() }, null)</a></li>
+}
                         }
-                        <li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47 znSdHead-menuList-item"><a href="#eluid5262d664" class="znSdHead-menuList-link">@Html.ActionLink("About", "About", "Home")</a></li>
+                        <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46 znSdHead-menuList-item"><a href="#page_wrapper" class="znSdHead-menuList-link">@Html.ActionLink("Photos", "Photos", "PlayerHomeController")</a></li>
+                        <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46 znSdHead-menuList-item"><a href="#page_wrapper" class="znSdHead-menuList-link">@Html.ActionLink("Videos", "Videos", "PlayerHomeController")</a></li>
+                        <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46 znSdHead-menuList-item"><a href="#page_wrapper" class="znSdHead-menuList-link">@Html.ActionLink("Articals", "Videos", "PlayerHomeController")</a></li>
 
-                        <li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50 znSdHead-menuList-item"><a href="#eluid63f0c71a" class="znSdHead-menuList-link">@Html.ActionLink("Contact", "Contact", "Home")</a></li>
+                        @*<li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47 znSdHead-menuList-item"><a href="#eluid5262d664" class="znSdHead-menuList-link">@Html.ActionLink("About", "About", "Home")</a></li>
+
+        <li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50 znSdHead-menuList-item"><a href="#eluid63f0c71a" class="znSdHead-menuList-link">@Html.ActionLink("Contact", "Contact", "Home")</a></li>*@
                     </ul>
                 </div>
             </div>

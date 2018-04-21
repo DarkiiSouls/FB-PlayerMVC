@@ -208,6 +208,7 @@
     <Compile Include="Controllers\ArticalsController.cs" />
     <Compile Include="Controllers\FollowController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImagsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PlayerHomeControllerController.cs" />
     <Compile Include="Controllers\PlayersController.cs" />
@@ -682,6 +683,11 @@
     <Content Include="Views\Articals\Edit.cshtml" />
     <Content Include="Views\Articals\Index.cshtml" />
     <Content Include="Views\Follow\Index.cshtml" />
+    <Content Include="Views\Imags\Create.cshtml" />
+    <Content Include="Views\Imags\Delete.cshtml" />
+    <Content Include="Views\Imags\Details.cshtml" />
+    <Content Include="Views\Imags\Edit.cshtml" />
+    <Content Include="Views\Imags\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
