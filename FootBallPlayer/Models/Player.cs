@@ -19,10 +19,12 @@ namespace FootBallPlayer.Models
         public int Salary { get; set; }
         public string Detail { get; set; }
         public DateTime DataTime { get; set; }
-        public Artical Articals { get; set; }
+        public IEnumerable<Article> Articles { get; set; }
         public Massege Masseges { get; set; }
         public Imag Image { get; set; }
+        public string CoverPhotoPath { get; set; }
         public int ImaId { get; set; }
+        public IEnumerable<Imag> Album { get; set; }
 
         internal object Include(Func<object, object> p)
         {

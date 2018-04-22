@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_PlayerLayout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Details</h2>
@@ -20,6 +20,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.PublishDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublishDate)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.PlayerId)
         </dt>
 
@@ -33,6 +41,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.VisterId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoverPhoto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoverPhoto)
         </dd>
 
     </dl>

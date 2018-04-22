@@ -3,20 +3,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FootBallPlayer.Models
 {
-    public class Artical
+    public class Article
     {
         [Key]
-        public int ArticalId { get; set; }
+        public int ArticleId { get; set; }
         public string Text { get; set; }
         public DateTime PublishDate { get; set; }
-
         public int PlayerId { get; set; }
-        public int VisterId { get; set; }
-        public int ImagId { get; set; }
-
+        public string VisterId { get; set; }
+        public string CoverPhoto { get; set; }
         public virtual ApplicationUser Visiter { get; set; }
-        public virtual ApplicationUser Player { get; set; }
-
-        public virtual Imag imag { get; set; }
+        public virtual Player Player { get; set; }
     }
 }

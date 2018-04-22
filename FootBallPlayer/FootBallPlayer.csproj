@@ -203,9 +203,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\ArticlesController.cs" />
     <Compile Include="Controllers\Api\LogInController.cs" />
     <Compile Include="Controllers\Api\PlayersController.cs" />
-    <Compile Include="Controllers\ArticalsController.cs" />
+    <Compile Include="Controllers\Api\PlayerSrvController.cs" />
+    <Compile Include="Controllers\Api\UploadController.cs" />
+    <Compile Include="Controllers\Api\VideosController.cs" />
+    <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\FollowController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImagsController.cs" />
@@ -216,19 +220,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804151645282_d.cs" />
-    <Compile Include="Migrations\201804151645282_d.Designer.cs">
-      <DependentUpon>201804151645282_d.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804171611301_articals.cs" />
-    <Compile Include="Migrations\201804171611301_articals.Designer.cs">
-      <DependentUpon>201804171611301_articals.cs</DependentUpon>
+    <Compile Include="Migrations\201804212208052_ss.cs" />
+    <Compile Include="Migrations\201804212208052_ss.Designer.cs">
+      <DependentUpon>201804212208052_ss.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Artical.cs" />
+    <Compile Include="Models\Dto\PlayersSrvDto.cs" />
     <Compile Include="Models\Dto\SignInDto.cs" />
     <Compile Include="Models\Dto\UserDto.cs" />
     <Compile Include="Models\Follower.cs" />
@@ -236,11 +237,14 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Massege.cs" />
     <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Video.cs" />
     <Compile Include="Models\Vister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ArticleVideoModel.cs" />
     <Compile Include="ViewModels\HomePlayerViewModel.cs" />
     <Compile Include="ViewModels\PlayerViewModel.cs" />
+    <Compile Include="ViewModels\VideoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\First\css\animate.css" />
@@ -688,10 +692,18 @@
     <Content Include="Views\Imags\Details.cshtml" />
     <Content Include="Views\Imags\Edit.cshtml" />
     <Content Include="Views\Imags\Index.cshtml" />
+    <Content Include="Views\PlayerHomeController\Messages.cshtml" />
+    <Content Include="Views\Articles\Create.cshtml" />
+    <Content Include="Views\Articles\Delete.cshtml" />
+    <Content Include="Views\Articles\Details.cshtml" />
+    <Content Include="Views\Articles\Edit.cshtml" />
+    <Content Include="Views\Articles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Files\Articals\" />
+    <Folder Include="Files\ArticlesMedia\" />
+    <Folder Include="Files\Gallery\" />
     <Folder Include="Files\Players\" />
     <Folder Include="Files\Videos\" />
     <Folder Include="Models\Functions\" />
@@ -710,11 +722,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804151645282_d.resx">
-      <DependentUpon>201804151645282_d.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804171611301_articals.resx">
-      <DependentUpon>201804171611301_articals.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804212208052_ss.resx">
+      <DependentUpon>201804212208052_ss.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,40 @@
+﻿@model  FootBallPlayer.ViewModels.ArticleVideoModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create",new { id = Model.PlayerId})
+</p>
+<table>
+    @foreach (var i in Model.Articles)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => i.Player.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => i.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => i.PublishDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => i.Visiter.YourName)
+            </td>
+            <td>
+                    <img src="~/Files/ArticlesMedia/@i.CoverPhoto" />
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = i.ArticleId }) |
+                @Html.ActionLink("Details", "Details", new { id = i.ArticleId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = i.ArticleId })
+            </td>
+        </tr>
+    }
+
+</table>

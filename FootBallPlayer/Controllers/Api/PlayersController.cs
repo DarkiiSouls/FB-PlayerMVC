@@ -87,7 +87,7 @@ namespace FootBallPlayer.Controllers.Api
             var p = new Player
             {
                 Age = Player.Age,
-                Articals = null,
+                Articles = null,
                 DataTime = DateTime.Now,
                 Detail = Player.Detail,
                 FullName = Player.FullName,

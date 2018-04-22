@@ -1,0 +1,59 @@
+﻿@model FootBallPlayer.ViewModels.PlayerViewModel
+@{
+    ViewBag.Title = "Messages";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
+        <div>
+            <h3 style="color:darkkhaki;
+    text-align: center;">
+                Masseges
+            </h3>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="">
+
+            @Html.TextAreaFor(model => model.Massege.Text, new { @class = "Text__input" })
+            @Html.ValidationMessageFor(model => model.Massege.Text, "", new { @class = "text-danger" })
+
+
+        </div>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="    position: absolute;
+    right: 40px;
+    margin: 46px;">
+            <i class="material-icons" role="presentation">check</i><span class="visuallyhidden">add comment</span>
+        </button>
+        @for (int i = 0; i < Model.Masseges.Count(); i++)
+        {
+            <div class="comment mdl-color-text--grey-700" style="margin:20px">
+                <header class="comment__header">
+                    <img src="~/Files/PlayerPage/No.png" class="comment__avatar">
+                    <div class="comment__author">
+                        <strong>@Model.Masseges[i].Name</strong>
+                        <span>@Model.Masseges[i].Time</span>
+                    </div>
+                </header>
+                <div class="comment__text" style="    background-color: white;padding: 10px;border-radius: 10px">
+                    @Model.Masseges[i].Text
+                </div>
+                <nav class="comment__actions">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                        <i class="material-icons" role="presentation">thumb_up</i><span class="visuallyhidden">like comment</span>
+                    </button>
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                        <i class="material-icons" role="presentation">thumb_down</i><span class="visuallyhidden">dislike comment</span>
+                    </button>
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                        <i class="material-icons" role="presentation">share</i><span class="visuallyhidden">share comment</span>
+                    </button>
+                </nav>
+
+            </div>
+        }
+
+    </div>
+}

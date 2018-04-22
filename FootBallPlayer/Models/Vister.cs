@@ -14,7 +14,7 @@ namespace FootBallPlayer.Models
         public ApplicationUser VisterUser { get; set; }
         public string FullName { get; set; }
         public int Age { get; set; }
-        public Artical Articals { get; set; }
+        public Article Articals { get; set; }
         public Massege Masseges { get; set; }
     }
 }

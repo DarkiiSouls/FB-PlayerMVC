@@ -1,4 +1,4 @@
-﻿
+﻿@model FootBallPlayer.ViewModels.VideoViewModel
 @{
     Layout = "~/Views/Shared/_PlayerLayout.cshtml";
 }
@@ -7,112 +7,173 @@
         position: absolute;
         width: inherit;
     }
+
     .eltdf-fullscreen-menu-opener, .eltdf-fullscreen-menu-opener .eltdf-fm-lines {
         color: #d7dfe8;
     }
 </style>
 
-    <link href="~/Content/Video/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/Video/mbr-additional.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Video/mbr-additional.css" rel="stylesheet" />
 
-    <link href="~/Content/Video/mobirise-icons.css" rel="stylesheet" />
-    <link href="~/Content/Video/style.css" rel="stylesheet" />
+<link href="~/Content/Video/mobirise-icons.css" rel="stylesheet" />
+<link href="~/Content/Video/style.css" rel="stylesheet" />
 
-    <link href="~/Content/Video/stylem.css" rel="stylesheet" />
-
-
+<link href="~/Content/Video/stylem.css" rel="stylesheet" />
 
 
-    <!-- Google Analytics -->
-    <noscript>
-        <iframe src="http://www.googletagmanager.com/ns.html?id=GTM-PFK425" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- /Google Analytics -->
-
-    <section class="menu cid-qv1frvgcz3" once="menu" id="menu1-5g" data-rv-view="10975"></section>
-
-    <section class="engine"><a href="https://mobirise.co/i">how to build a website for free</a></section>
-    <section class="header11 cid-qv5CFv5hOn" id="header11-5f" data-rv-view="10937">
-
-        <!-- Block parameters controls (Blue "Gear" panel) -->
-        <!-- End block parameters -->
-
-        <div class="container align-left">
-            <div class="media-container-column mbr-white col-md-12">
-
-                <h1 class="mbr-section-title py-3 mbr-fonts-style display-1">3 HTML Video Gallery Templates</h1>
 
 
-            </div>
+<!-- Google Analytics -->
+<noscript>
+    <iframe src="http://www.googletagmanager.com/ns.html?id=GTM-PFK425" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- /Google Analytics -->
+
+<section class="menu cid-qv1frvgcz3" once="menu" id="menu1-5g" data-rv-view="10975"></section>
+
+<section class="engine"><a href="https://mobirise.co/i">how to build a website for free</a></section>
+<section class="header11 cid-qv5CFv5hOn" id="header11-5f" data-rv-view="10937">
+
+    <!-- Block parameters controls (Blue "Gear" panel) -->
+    <!-- End block parameters -->
+
+    <div class="container align-left">
+        <div class="media-container-column mbr-white col-md-12">
+
+            <h1 class="mbr-section-title py-3 mbr-fonts-style display-1">3 HTML Video Gallery Templates</h1>
+
+
         </div>
-        <div style="margin-top:20px;right:30px;position:absolute">
-            @if (User.Identity.IsAuthenticated)
+    </div>
+    <div style="margin-top:20px;right:30px;position:absolute">
+
+        @if (User.Identity.IsAuthenticated)
         {
 
             @*@Html.ActionLink("Edit", "Edit", new { id = Model.PlayerUserId })">*@
-            <a href="" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" data-upgraded=",MaterialButton,MaterialRipple" style="margin-right:0">
-                <i class="material-icons mdl-color-text--white" role="presentation"><input type="file" /></i>
-            </a>
 
-    }
-        </div>
-    </section>
+            <div data-toggle="modal" data-target="#myModal" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" data-upgraded=",MaterialButton,MaterialRipple" style="margin-right:0">
+                <label for="file-upload" class="custom-file-upload">
+                    <i class="material-icons mdl-color-text--white" role="presentation">add</i>
+                </label>
 
-    <section class="mbr-gallery mbr-slider-carousel cid-qvz0cgxPXY" id="gallery3-bl" data-rv-view="10940">
 
+            </div>
+        }
+    </div>
+</section>
+
+<section class="mbr-gallery mbr-slider-carousel cid-qvz0cgxPXY" id="gallery3-bl" data-rv-view="10940">
+
+    <div>
         <div>
-            <div>
-                <!-- Filter -->
-                <!-- Gallery -->
-                <div class="mbr-gallery-row">
-                    <div class="mbr-gallery-layout-default">
+            <!-- Filter -->
+            <!-- Gallery -->
+            <div class="row">
+
+                @foreach (var item in Model.Videos)
+    {
+            <div class="col-md-4">
+                zis iz vizeo
+                <iframe width="560" height="315" src="@item.Url" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+            </div>}
+
+            </div>
+            @*<div class="mbr-gallery-row">
+                <div class="mbr-gallery-layout-default">
+                    <div>
                         <div>
-                            <div>
-                                <div class="mbr-gallery-item mbr-gallery-item--p2 video-slide" data-video-url="https://www.youtube.com/watch?v=l8UXhtqV6hU&amp;feature=youtu.be" data-tags="Awesome">
-                                    <div href="#lb-gallery3-bl" data-slide-to="0" data-toggle="modal">
-                                        <div></div><img alt="" src="assets/images/2017-8-1-11-57-53-750243.jpg"><span class="icon-video"></span>
-                                    </div>
+                            <div class="mbr-gallery-item mbr-gallery-item--p2 video-slide" data-video-url="https://www.youtube.com/watch?v=l8UXhtqV6hU&amp;feature=youtu.be" data-tags="Awesome">
+                                <div href="#lb-gallery3-bl" data-slide-to="0" data-toggle="modal">
+                                    <div></div><img alt="" src="assets/images/2017-8-1-11-57-53-750243.jpg"><span class="icon-video"></span>
                                 </div>
+                            </div>
 
-                            </div>
                         </div>
-                        <div class="clearfix"></div>
                     </div>
+                    <div class="clearfix"></div>
                 </div>
-                <!-- Lightbox -->
-                <div data-app-prevent-settings="" class="mbr-slider modal fade carousel slide" tabindex="-1" data-keyboard="true" data-interval="false" id="lb-gallery3-bl">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active video-container"><img src="assets/images/gallery06.jpg" alt=""></div>
-                                    <div class="carousel-item video-container"><img src="assets/images/gallery07.jpg" alt=""></div>
-                                </div><a class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#lb-gallery3-bl"><span class="mbri-left mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control carousel-control-next" role="button" data-slide="next" href="#lb-gallery3-bl"><span class="mbri-right mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Next</span></a><a class="close" href="#" role="button" data-dismiss="modal"><span class="sr-only">Close</span></a>
-                            </div>
+            </div>*@
+            <!-- Lightbox -->
+            <div data-app-prevent-settings="" class="mbr-slider modal fade carousel slide" tabindex="-1" data-keyboard="true" data-interval="false" id="lb-gallery3-bl">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active video-container"><img src="assets/images/gallery06.jpg" alt=""></div>
+                                <div class="carousel-item video-container"><img src="assets/images/gallery07.jpg" alt=""></div>
+                            </div><a class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#lb-gallery3-bl"><span class="mbri-left mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control carousel-control-next" role="button" data-slide="next" href="#lb-gallery3-bl"><span class="mbri-right mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Next</span></a><a class="close" href="#" role="button" data-dismiss="modal"><span class="sr-only">Close</span></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-    </section>
+</section>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            @using (Html.BeginForm(FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+            <div class="modal-body">
 
-    <section once="" class="cid-qvFIPBwcDt" id="footer6-c6" data-rv-view="11032">
-
-        <div class="container" >
-            <div class="media-container-row align-center mbr-white">
-                <div class="col-12">
-                    <p class="mbr-text mb-0 mbr-fonts-style display-7">
-                        © Copyright 2017 <a href="index.html" class="text-white">Free Bootstrap Templates</a> - All Rights Reserved
-                    </p>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Video.Url, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Video.Url, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Video.Url, "", new { @class = "text-danger" })
+                    </div>
                 </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Video.Discribtion, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Video.Discribtion, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Video.Discribtion, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                @*<div class="form-group" style="text-align:center">
+                <label style="margin-right:20px">Video URL</label>
+                <input type="text" name="file" style="display:block"  />
+        </div>*@
+
+
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+                    <input type="submit" class="btn btn-primary" value="Update" />
+                    @* <input  type="submit" value="Save" class="zn_contact_submit btn btn-fullcolor btn-custom-color btn--square  btn-md" />*@
+
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<section once="" class="cid-qvFIPBwcDt" id="footer6-c6" data-rv-view="11032">
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="col-12">
+                <p class="mbr-text mb-0 mbr-fonts-style display-7">
+                    © Copyright 2017 <a href="index.html" class="text-white">Free Bootstrap Templates</a> - All Rights Reserved
+                </p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
-    <script src="~/Content/Video/bootstrap.min.js"></script>
-    <script src="~/Content/Video/jquery.min.js"></script>
-    <script src="~/Content/Video/popper.min.js"></script>
-    <script src="~/Content/Video/script.js"></script>
-    <script src="~/Content/Video/smooth-scroll.js"></script>
+
+<script src="~/Content/Video/jquery.min.js"></script>
+<script src="~/Content/Video/popper.min.js"></script>
+<script src="~/Content/Video/script.js"></script>
+<script src="~/Content/Video/smooth-scroll.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>

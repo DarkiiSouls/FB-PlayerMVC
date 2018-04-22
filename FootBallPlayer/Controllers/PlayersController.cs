@@ -93,7 +93,8 @@ namespace FootBallPlayer.Controllers
             {
 
                 player.PlayerUserId = User.Identity.GetUserId();
-                Imag im = db.Imags.FirstOrDefault(x => x.PlayerUserId == player.PlayerUserId);
+                Imag im = new Imag();
+                 im = db.Imags.FirstOrDefault(x => x.PlayerUserId == player.PlayerUserId);
 
                 if (im == null)
                 {
@@ -105,12 +106,12 @@ namespace FootBallPlayer.Controllers
                         {
                             var fileName = Path.GetFileName(file.FileName);
                             var path = Path.Combine(Server.MapPath("~/Files/PlayerPage/"), fileName);
-                            imag.Path = path;
-                            imag.PlayerUserId = User.Identity.GetUserId();
-                            imag.Name = fileName;
-                            imag.PlayerId = player.PlayerId;
+                            im.Path = path;
+                            im.PlayerUserId = User.Identity.GetUserId();
+                            im.Name = fileName;
+                            im.PlayerId = player.PlayerId;
                             
-                            db.Imags.Add(imag);
+                            db.Imags.Add(im);
                             file.SaveAs(path);
                             db.SaveChanges();
 
@@ -119,8 +120,6 @@ namespace FootBallPlayer.Controllers
                 }
                 else if(im !=null)
                 {
-                    db.Imags.Remove(im);
-                    db.SaveChanges();
                     if (Request.Files.Count > 0)
                     {
                         var file = Request.Files[0];
@@ -129,19 +128,22 @@ namespace FootBallPlayer.Controllers
                         {
                             var fileName = Path.GetFileName(file.FileName);
                             var path = Path.Combine(Server.MapPath("~/Files/PlayerPage/"), fileName);
-                            imag.Path = path;
-                            imag.PlayerUserId = User.Identity.GetUserId();
-                            imag.Name = fileName;
-                            imag.PlayerId = player.PlayerId;
-                            
-                            db.Imags.Add(imag);
+                            im.Path = path;
+                            //im.PlayerUserId = User.Identity.GetUserId();
+                            im.Name = fileName;
+                            //imag.PlayerId = player.PlayerId;
+                            db.Entry(im).State = EntityState.Modified;
+
                             file.SaveAs(path);
                             db.SaveChanges();
                         }
                     }
                 }
-                player.ImaId = imag.ImageId;
+                player.ImaId = im.ImageId;
+                player.Image = db.Imags.Find(im.ImageId);
+                player.CoverPhotoPath = im.Name;
                 db.Entry(player).State = EntityState.Modified;
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

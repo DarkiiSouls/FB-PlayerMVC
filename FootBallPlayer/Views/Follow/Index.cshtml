@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FootBallPlayer.Models.Follower>
+﻿@model FootBallPlayer.ViewModels.HomePlayerViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -8,47 +8,50 @@
 
 
 
-    <section class="zn_section eluidd85ca84f     section-sidemargins    section--no " id="eluidd85ca84f">
-        <div class="zn_section_size full_width zn-section-height--auto zn-section-content_algn--top ">
-            <div class="row ">
-               
-                <div class="eluid68dc4ddc      col-md-12 col-sm-12   znColumnElement" id="eluid68dc4ddc">
-                    <div class="znColumnElement-innerWrapper-eluid68dc4ddc znColumnElement-innerWrapper znColumnElement-innerWrapper--valign-top znColumnElement-innerWrapper--halign-left ">
-                        <div class="znColumnElement-innerContent">
-                            <div class="zn_text_box eluidfdd01e84  zn_text_box-light element-scheme--light">
-                                <h1 style="text-align: center;"><span style="font-family: roboto; font-weight: 300;"><span style="font-size: 44px;"><span style="color: #000000;">Following</span></span></span></h1>
-                            </div>
-                            <div class=" eluid007bdd67 gridPhotoGallery mfp-gallery mfp-gallery--misc gridPhotoGallery--ratio-short gridPhotoGallery--cols-5 gpg-gutter--0   gridPhotoGallery--scheme-light" data-cols="5" data-layout="masonry">
-                                <div class="gridPhotoGallery__item gridPhotoGallery__item--sizer"></div>
-                                @foreach (var item in Model)
-    {
+<section class="zn_section eluidd85ca84f     section-sidemargins    section--no " id="eluidd85ca84f">
+    <div class="zn_section_size full_width zn-section-height--auto zn-section-content_algn--top ">
+        <div class="row ">
 
+            <div class="eluid68dc4ddc      col-md-12 col-sm-12   znColumnElement" id="eluid68dc4ddc">
+                <div class="znColumnElement-innerWrapper-eluid68dc4ddc znColumnElement-innerWrapper znColumnElement-innerWrapper--valign-top znColumnElement-innerWrapper--halign-left ">
+                    <div class="znColumnElement-innerContent" >
+                        <div class="zn_text_box eluidfdd01e84  zn_text_box-light element-scheme--light">
+                            <h1 style="text-align: center;"><span style="font-family: roboto; font-weight: 300;"><span style="font-size: 44px;"><span style="color: #000000;">Followes</span></span></span></h1>
+                        </div>
+                        <div class=" eluid007bdd67 gridPhotoGallery mfp-gallery mfp-gallery--misc gridPhotoGallery--ratio-short gridPhotoGallery--cols-5 gpg-gutter--0   gridPhotoGallery--scheme-light" data-cols="5" data-layout="masonry">
+                            <div class="gridPhotoGallery__item gridPhotoGallery__item--sizer"></div>
 
-                            <div class="gridPhotoGallery__item gridPhotoGalleryItem--w1 gridPhotoGallery-item--scheme- ">
-                                <a title="@item.Player.UserName" class="gridPhotoGalleryItem--h1 gridPhotoGallery__link kl-fontafter-alt gridPhotoGallery__link-anim--zoomin"
-                                   href="../PlayerHomeController/Index/@item.Player.Id">
+                            @for (int i = 0; i < Model.Players.Count; i++)
+                            {
+                                <div class="gridPhotoGallery__item gridPhotoGalleryItem--w1 gridPhotoGallery-item--scheme- ">
+                                    <a title="@Model.Players[i].FullName" class="gridPhotoGalleryItem--h1 gridPhotoGallery__link kl-fontafter-alt gridPhotoGallery__link-anim--zoomin"
+                                       href="../PlayerHomeController/Index/@Model.Players[i].PlayerId">
 
-                                    s
+                                        <span class="gridPhotoGallery__imgAnimWrapper">
+                                            <img class="gridPhotoGallery__img cover-fit-img"
+                                                 src="~/Files/PlayerPage/@Model.Players[i].CoverPhotoPath" width="600" height="" alt="" title=""><i class="kl-icon glyphicon glyphicon-search circled-icon ci-medium"></i>
+                                        </span>
 
-                                </a>
-                            </div>
-
-}
-
-
-
-
+                                    </a>
+                                </div>
+                            }
 
 
 
 
 
-                                <div class="clearfix"></div>
-                            </div>
+
+
+
+
+
+
+                            <div class="clearfix" style="height:900px"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 </table>

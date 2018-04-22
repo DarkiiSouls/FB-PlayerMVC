@@ -1,4 +1,5 @@
 ﻿using FootBallPlayer.Models;
+using FootBallPlayer.ViewModels;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,31 @@ namespace FootBallPlayer.Controllers
         }
         public ActionResult Index()
         {
-            return View(db.Followers.ToList());
+
+            var user = User.Identity.GetUserId();
+            var followings = db.Followers.Where(x => x.VisiterId == user).Select(x => x.PlayerId);
+
+            var f = followings.ToList();
+            if (f == null)
+            {
+                var vm = new HomePlayerViewModel { EmptyMessage = "yOK ", Images = null, Players = null, Vister = null };
+                return View(vm);
+
+            }
+            IList<Player> p = new List<Player>();
+            foreach (var item in f)
+            {
+                p.Add(db.Players.FirstOrDefault(x => x.PlayerUserId == item));
+            }
+            var viewModel = new HomePlayerViewModel
+            {
+                Players = p.ToList(),
+                Images = db.Imags.ToList(),
+                EmptyMessage = "",
+                Vister = null
+
+            };
+            return View(viewModel);
         }
         [HttpGet]
         public ActionResult Follow(string id)

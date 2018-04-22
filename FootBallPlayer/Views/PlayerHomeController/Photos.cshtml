@@ -3,19 +3,39 @@
     ViewBag.Title = "Photos";
     Layout = "~/Views/Shared/_PlayerLayout.cshtml";
 }
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+<style type="text/css">
+
+    input[type="file"] {
+        display: none;
+    }
+
+    .custom-file-upload {
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+    }
+</style>
 @using Microsoft.AspNet.Identity
 <div class="eltdf-full-width" style="margin-top:10px;position: inherit">
     <div style="margin-top:20px">
         @if (User.Identity.IsAuthenticated)
-    {
+        {
 
-        @*@Html.ActionLink("Edit", "Edit", new { id = Model.PlayerUserId })">*@
+            @*@Html.ActionLink("Edit", "Edit", new { id = Model.PlayerUserId })">*@
 
-        <a href="/imags/Create/@Model.Players" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" data-upgraded=",MaterialButton,MaterialRipple" style="margin-right:0">
-            <i class="material-icons mdl-color-text--white" role="presentation">add</i>
-        </a>
+            <div data-toggle="modal" data-target="#myModal" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" data-upgraded=",MaterialButton,MaterialRipple" style="margin-right:0">
+                <label for="file-upload" class="custom-file-upload">
+                    <i class="material-icons mdl-color-text--white" role="presentation">add</i>
+                </label>
+                <input id="file-upload" type="file" />
 
-}
+            </div>
+        }
     </div>
     <div class="eltdf-full-width-inner">
 
@@ -79,7 +99,50 @@
     </div>
 
 </div>
+<!-- Button trigger modal -->
+@*<button type="button" class="btn btn-primary btn-lg" >
+        Launch demo modal
+    </button>*@
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            @using (Html.BeginForm("Photos",
+            "PlayerHomeController", FormMethod.Post,
+            new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+            <div class="modal-body">
+
+
+                    <div class="form-group" style="text-align:center">
+                        <div class="col-md-offset-2 col-md-10" style=" display: -webkit-box;">
+                            <label style="margin-right:20px">Image</label>
+                            <input type="file" name="file" style="display:block" onchange="readURL(this);" />
+
+
+                        </div>
+                    </div>
+               
+                <div style="text-align:center">
+                    <img id="blah" src="#" alt="your image"  style="margin-top:30px"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+                <input type="submit" class="btn btn-primary" value="Update" />
+                       @* <input  type="submit" value="Save" class="zn_contact_submit btn btn-fullcolor btn-custom-color btn--square  btn-md" />*@
+              
+            </div>
+            }
+        </div>
+    </div>
+</div>
 <footer class="eltdf-page-footer">
 
     <div class="eltdf-footer-bottom-holder">
@@ -96,3 +159,21 @@
         </div>
     </div>
 </footer>
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(400)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>

@@ -11,5 +11,7 @@ namespace FootBallPlayer.ViewModels
         public List<Player> Players { get; set; }
         public List<Imag> Images { get; set; }
         public List<Vister> Vister { get; set; }
+        public string EmptyMessage { get; set; }
+        
     }
 }
