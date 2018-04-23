@@ -1,40 +1,64 @@
 ﻿@model  FootBallPlayer.ViewModels.ArticleVideoModel
 
 @{
+    /**/
+
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_PlayerLayout.cshtml";
+}
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+@if (User.Identity.IsAuthenticated)
+{
+
+
+
+    <div data-toggle="modal" data-target="#myModal" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" data-upgraded=",MaterialButton,MaterialRipple" style="margin-right:0;    right: 0;
+    position: absolute;
+    margin: 20px;">
+        <a href="~/Articles/Create/@Model.PlayerId">
+            <i class="material-icons mdl-color-text--white" role="presentation">add</i>
+
+        </a>
+
+
+    </div>
 }
 
-<h2>Index</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create",new { id = Model.PlayerId})
+    @Html.ActionLink("Create New", "Create", new { id = Model.PlayerId })
 </p>
-<table>
+<div class="row" style="margin:10px;box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);  
+    margin: 60px 20px 0 20px;">
     @foreach (var i in Model.Articles)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => i.Player.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => i.Text)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => i.PublishDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => i.Visiter.YourName)
-            </td>
-            <td>
-                    <img src="~/Files/ArticlesMedia/@i.CoverPhoto" />
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = i.ArticleId }) |
-                @Html.ActionLink("Details", "Details", new { id = i.ArticleId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = i.ArticleId })
-            </td>
-        </tr>
-    }
 
-</table>
+    <div class="col-md-4" style="padding:10px">
+        <img src="~/Files/ArticlesMedia/@i.CoverPhoto" height="200px" width="500px" />
+        <h4>Publicher <p style="color:red">@Html.DisplayFor(modelItem => i.Visiter.YourName)</p> </h4>
+
+        <div style="height:200px;overflow:hidden;width:500px">
+            @Html.DisplayFor(modelItem => i.Player.FullName)
+
+            @Html.DisplayFor(modelItem => i.Text)
+
+
+        </div>
+        <h4>Publich Date <p style="color:red">@Html.DisplayFor(modelItem => i.PublishDate)</p> </h4>
+
+
+
+
+
+    </div>
+  
+
+
+    @*@Html.ActionLink("Edit", "Edit", new { id = i.ArticleId }) |
+        @Html.ActionLink("Details", "Details", new { id = i.ArticleId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = i.ArticleId })*@
+
+}
+    </div>
+
+
+

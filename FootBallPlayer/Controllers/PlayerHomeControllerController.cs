@@ -171,12 +171,15 @@ namespace FootBallPlayer.Controllers
             }
             Player player = db.Players.Find(id);
             Imag imag = db.Imags.FirstOrDefault(x => x.PlayerUserId == player.PlayerUserId);
-
+            Massege m = db.Masseges.FirstOrDefault(z => z.PlayerId == player.PlayerId);
+            Vister v = db.Visters.FirstOrDefault(c => c.VisitorUserId == m.VisterId);
             var viewModel = new PlayerViewModel
             {
                 Players = player,
                 Imags = imag,
-                Masseges = db.Masseges.Where(x => x.PlayerId == player.PlayerId).ToList()
+                Masseges = db.Masseges.Where(x => x.PlayerId == player.PlayerId).ToList(),
+                Visters = v
+                
             };
             //ViewBag.Player = viewModel.Players.PlayerUserId;
             //ViewBag.Images = viewModel.Imags;
@@ -197,6 +200,7 @@ namespace FootBallPlayer.Controllers
             {
                 massege.PlayerId = player.PlayerId;
                 massege.VisterId = User.Identity.GetUserId();
+                
                 massege.Time = DateTime.Now;
                 db.Masseges.Add(massege);
                 db.SaveChanges();

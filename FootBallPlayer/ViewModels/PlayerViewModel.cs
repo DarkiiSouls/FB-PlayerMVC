@@ -12,6 +12,7 @@ namespace FootBallPlayer.ViewModels
         public Imag Imags { get; set; }
         public List<Massege> Masseges { get; set; }
         public Massege Massege { get; set; }
+        public Vister Visters { get; set; }
 
     }
 }

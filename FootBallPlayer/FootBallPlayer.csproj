@@ -681,11 +681,6 @@
     <Content Include="Views\PlayerHomeController\Photos.cshtml" />
     <Content Include="Views\PlayerHomeController\Videos.cshtml" />
     <Content Include="Views\PlayerHomeController\Details.cshtml" />
-    <Content Include="Views\Articals\Create.cshtml" />
-    <Content Include="Views\Articals\Delete.cshtml" />
-    <Content Include="Views\Articals\Details.cshtml" />
-    <Content Include="Views\Articals\Edit.cshtml" />
-    <Content Include="Views\Articals\Index.cshtml" />
     <Content Include="Views\Follow\Index.cshtml" />
     <Content Include="Views\Imags\Create.cshtml" />
     <Content Include="Views\Imags\Delete.cshtml" />
