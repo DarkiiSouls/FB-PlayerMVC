@@ -2,28 +2,24 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_PlayerLayout.cshtml";
 }
+@using Microsoft.AspNet.Identity
 
-<h2>Details</h2>
 
-<div>
-    <h4>Article</h4>
-    <hr />
+<div style="margin: 60px 20px 30px 20px;
+    width: 50%;
+    text-align: center;
+    left: 25%;
+    position: relative;    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);">
+
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Player.PlayerUserId)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Player.PlayerUserId)
-        </dd>
+        <img src="~/Files/ArticlesMedia/@Model.CoverPhoto" height="200px" width="100%" />
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Text)
-        </dt>
 
-        <dd>
+
+        <dd style="padding:20px">
             @Html.DisplayFor(model => model.Text)
         </dd>
 
@@ -35,25 +31,20 @@
             @Html.DisplayFor(model => model.PublishDate)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.VisterId)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.VisterId)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CoverPhoto)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CoverPhoto)
-        </dd>
 
     </dl>
+    <hr />
+    <br />
+    <p style="color:red">
+        @if (User.IsInRole("Admin") || Model.Visiter.Id==User.Identity.GetUserId()) {
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ArticleId }) 
+          } |
+
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    <br />
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ArticleId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
