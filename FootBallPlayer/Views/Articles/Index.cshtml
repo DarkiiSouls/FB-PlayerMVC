@@ -6,7 +6,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_PlayerLayout.cshtml";
 }
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+
 @if (User.Identity.IsAuthenticated)
 {
 
@@ -27,30 +27,34 @@
 <p>
     @Html.ActionLink("Create New", "Create", new { id = Model.PlayerId })
 </p>
-<div class="row" style="margin:10px;box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);  
-    margin: 60px 20px 0 20px;">
+<div class="row" style="margin:10px;  
+    margin: 60px 40px 0 40px;">
     @foreach (var i in Model.Articles)
     {
 
-    <div class="col-md-4" style="padding:10px">
-        <a href="~/Articles/Details/@i.ArticleId"><img src="~/Files/ArticlesMedia/@i.CoverPhoto" height="200px" width="500px" /></a>
-        
-        <h4>Publisher <p style="color:red">@Html.DisplayFor(modelItem => i.Visiter.YourName)</p> </h4>
+    <div class="col-md-4" style="padding:10px ; box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2)">
+        <a href="~/Articles/Details/@i.ArticleId">
+            <h3 style="color:red;text-align:center;margin-top:-3px">Title</h3></a>
+            <img src="~/Files/ArticlesMedia/@i.CoverPhoto" height="200px" width="100%" />
+            
 
-        <div style="height:200px;overflow:hidden;width:500px">
-            @Html.DisplayFor(modelItem => i.Player.FullName)
+            <h4 style="text-align:center">Publisher <p style="color:red;width:100%;text-align:center">@Html.DisplayFor(modelItem => i.Visiter.YourName)</p> </h4>
 
-            @Html.DisplayFor(modelItem => i.Text)
+            <div style="height:200px;overflow:hidden;width:100%;text-align:center;font-family:sans-serif">
+                @Html.DisplayFor(modelItem => i.Player.FullName)
 
-
-        </div>
-        <h4>Publich Date <p style="color:red">@Html.DisplayFor(modelItem => i.PublishDate)</p> </h4>
-
+                @Html.DisplayFor(modelItem => i.Text)
 
 
+            </div>
+            <hr />
+            <h4 style="text-align:center">Publich Date <p style="color:red;text-align:center">@Html.DisplayFor(modelItem => i.PublishDate)</p> </h4>
 
 
-    </div>
+
+
+
+</div>
   
 
 

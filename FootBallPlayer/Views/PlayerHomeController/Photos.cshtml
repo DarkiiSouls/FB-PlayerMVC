@@ -3,7 +3,7 @@
     ViewBag.Title = "Photos";
     Layout = "~/Views/Shared/_PlayerLayout.cshtml";
 }
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+
 <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
@@ -64,7 +64,7 @@
                                                 <article class="eltdf-pl-item eltdf-item-space eltdf-pl-masonry-large-width post-120 portfolio-item type-portfolio-item status-publish has-post-thumbnail hentry portfolio-category-lifestyle portfolio-tag-black-white portfolio-tag-fashion portfolio-tag-portraits">
                                                     <div class="eltdf-pl-item-inner">
                                                         <div class="eltdf-pli-image">
-                                                            <img width="1100" height="550" src="~/Files/PlayerPage/@Model.Images[i].Name" class="attachment-nightshade_elated_landscape size-nightshade_elated_landscape wp-post-image" alt="a" />
+                                                            <a href="/PlayerHomeController/PhotoDetails/@Model.Images[i].ImageId"><img width="1100" height="550" src="~/Files/Gallery/@Model.Images[i].Name" /></a>
                                                         </div>
                                                         <div class="eltdf-pli-text-holder">
                                                             <div class="eltdf-pli-text-wrapper">
@@ -74,12 +74,12 @@
                                                                     </h3>
 
                                                                     <div class="eltdf-pli-category-holder">
-                                                                        <a itemprop="url" class="eltdf-pli-category" href="~/Files/PlayerPage/@Model.Images[i].Name">Lifestyle</a>
+                                                                        <a itemprop="url" class="eltdf-pli-category" href="/PlayerHomeController/PhotoDetails/@Model.Images[i].ImageId">Lifestyle</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <a itemprop="url" class="eltdf-pli-link eltdf-block-drag-link" href="~/Files/PlayerPage/@Model.Images[i].Name" target="_self"></a>
+                                                        <a itemprop="url" class="eltdf-pli-link eltdf-block-drag-link" href="/PlayerHomeController/PhotoDetails/@Model.Images[i].ImageId" target="_self"></a>
                                                     </div>
                                                 </article>
 

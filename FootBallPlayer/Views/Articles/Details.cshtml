@@ -1,5 +1,5 @@
-﻿@model FootBallPlayer.Models.Article
-
+﻿@model FootBallPlayer.ViewModels.MediaDetailsViewModel
+@using FootBallPlayer.Models
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_PlayerLayout.cshtml";
@@ -14,21 +14,21 @@
     position: relative;    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);">
 
     <dl class="dl-horizontal">
+        <h3 style="color:red;text-align:center;padding-top:15px">Title</h3>
+        <img src="~/Files/ArticlesMedia/@Model.Article.CoverPhoto" height="200px" width="100%" />
 
-        <img src="~/Files/ArticlesMedia/@Model.CoverPhoto" height="200px" width="100%" />
 
 
-
-        <dd style="padding:20px">
-            @Html.DisplayFor(model => model.Text)
+        <dd style="padding:20px;margin-left:0">
+            @Html.DisplayFor(model => model.Article.Text)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PublishDate)
+            @Html.DisplayNameFor(model => model.Article.PublishDate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PublishDate)
+            @Html.DisplayFor(model => model.Article.PublishDate)
         </dd>
 
 
@@ -39,12 +39,24 @@
     <hr />
     <br />
     <p style="color:red">
-        @if (User.IsInRole("Admin") || Model.Visiter.Id==User.Identity.GetUserId()) {
-            @Html.ActionLink("Edit", "Edit", new { id = Model.ArticleId }) 
-          } |
+        @*@if (User.IsInRole("Admin") || Model.V ==User.Identity.GetUserId()) {
+              @Html.ActionLink("Edit", "Edit", new { id = Model.Article.ArticleId })
+            } |*@
 
         @Html.ActionLink("Back to List", "Index")
     </p>
     <br />
 </div>
 
+<div style=" box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);width: 50%;
+    text-align: center;
+    left: 25%;position: relative;margin: 60px 20px 30px 20px">
+    <h3 style="color:red ;text-align:center">Comment</h3>
+    @Html.Action("Create", "Comments", new Comment { MediaId = Model.VideoId, MediaType = 1 })
+    @foreach (var item in Model.Comments)
+    {
+        <div class="col-md-4">
+            @item.Text
+        </div>
+    }
+</div>

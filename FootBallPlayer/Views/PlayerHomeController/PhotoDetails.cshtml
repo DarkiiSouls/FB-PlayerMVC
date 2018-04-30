@@ -1,0 +1,53 @@
+﻿@model FootBallPlayer.ViewModels.MediaDetailsViewModel
+@using FootBallPlayer.Models
+
+@{
+    ViewBag.Title = "PhotoDetails";
+    Layout = "~/Views/Shared/_PlayerLayout.cshtml";
+}
+
+@if (Model.Photo != null)
+{
+    <style>
+        body::before {
+            background-image: url(/Files/Gallery/@Model.Photo.Name);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+}
+@*<img src="@Model.Photo.Path" alt="Alternate Text" />*@
+
+
+@*@Html.RenderPartial("Comment", new { id = Model.VideoId, MediaType = 1 });*@
+
+
+    @*@Html.Action("Comment", new { MediaId = Model.VideoId, MediaType = 1 })*@
+    <div class="col-md-4" style=" box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2) ;background-color:white;margin:5% 80% 0 60%">
+        <h3 style="color:red ;text-align:center">Comment</h3>
+        <div style="padding:5px">
+            @Html.Action("Create", "Comments", new Comment { MediaId = Model.VideoId, MediaType = 1 })
+        </div>
+        @foreach (var item in Model.Comments)
+        {
+
+            <div class="col-md-2">
+                @item.Text
+            </div>
+        }
+    </div>
+
+    @*@using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Photos" , new { id= Model.PlayerId })
+            </div>
+        }
+
+</div>*@

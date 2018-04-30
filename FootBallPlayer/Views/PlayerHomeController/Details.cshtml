@@ -14,7 +14,7 @@
 {
     <style>
         body::before {
-            background-image: url(/Files/PlayerPage/@Model.Imags.Name);
+            background-image: url(/Files/PlayerPage/@Model.Players.CoverPhotoPath);
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -86,7 +86,7 @@
                         <div style="padding:20px">
                             <h4>About Me </h4>
 
-                            <p style="padding:20px ;font-size: 26px;font-family: serif; text-align: justify">
+                            <p style="padding:20px ; text-align: justify">
                                 @Html.DisplayFor(model => model.Players.Detail)
                             </p>
                         </div>

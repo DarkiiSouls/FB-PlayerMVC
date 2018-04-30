@@ -136,15 +136,34 @@ namespace FootBallPlayer.Controllers
             return View();
          
         }
+        public ActionResult PhotoDetails(int? id,int? id1)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var player = db.Players.FirstOrDefault(x => x.PlayerId == id1);
+            var photo = db.Imags.FirstOrDefault(x => x.ImageId == id);
+            var comments = db.Comments.Where(x => x.MediaId == id);
+            MediaDetailsViewModel model = new MediaDetailsViewModel {Photo= photo, Comments = comments.ToList(), Article = null, Video = null,Player=player };
+            if (photo == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(model);
+        }
         [HttpGet]
         public ActionResult Videos(int? id)
         {
             if (id!=null)
             {
-                var vm = new VideoViewModel() { PlayerId = (int)id, Videos = db.Videos.ToList() };
+                Player p = db.Players.FirstOrDefault(x => x.PlayerId == id);
+                var vm = new VideoViewModel() { PlayerId = (int)id, Videos = db.Videos.Where(x => x.PlayerId == id).ToList() };
                 return View(vm);
 
             }
+           
             var vmm = new VideoViewModel() {  Videos = db.Videos.ToList() };
             return View(vmm);
 
@@ -154,6 +173,10 @@ namespace FootBallPlayer.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (id == null)
+                {
+                    return View();
+                }
                 var yt = Vid.Video.Url.Replace("watch?v=", "embed/");
                 var v = new Video { Discribtion=Vid.Video.Discribtion,Url= yt, PlayerId=(int)id };
                 db.Videos.Add(v);
@@ -161,6 +184,23 @@ namespace FootBallPlayer.Controllers
                 return RedirectToAction("Videos", "PlayerHomeController", new { id = id });
             }
             return View();
+        }
+        public ActionResult VideoDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var player = db.Players.FirstOrDefault(x => x.PlayerId == id);
+            var videos = db.Videos.FirstOrDefault(x => x.Id == id);
+            var comments = db.Comments.Where(x => x.MediaId == id);
+            MediaDetailsViewModel model = new MediaDetailsViewModel { Video = videos, Comments = comments.ToList(), Article = null, Photo = null, Player=player };
+            if (videos == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(model);
         }
         [HttpGet]
         public ActionResult Messages(int? id)
@@ -171,14 +211,14 @@ namespace FootBallPlayer.Controllers
             }
             Player player = db.Players.Find(id);
             Imag imag = db.Imags.FirstOrDefault(x => x.PlayerUserId == player.PlayerUserId);
-            Massege m = db.Masseges.FirstOrDefault(z => z.PlayerId == player.PlayerId);
-            Vister v = db.Visters.FirstOrDefault(c => c.VisitorUserId == m.VisterId);
+            //Massege m = db.Masseges.FirstOrDefault(z => z.PlayerId == player.PlayerId);
+            //Vister v = db.Visters.FirstOrDefault(c => c.VisitorUserId == m.VisterId);
             var viewModel = new PlayerViewModel
             {
                 Players = player,
                 Imags = imag,
                 Masseges = db.Masseges.Where(x => x.PlayerId == player.PlayerId).ToList(),
-                Visters = v
+                //Visters = v
                 
             };
             //ViewBag.Player = viewModel.Players.PlayerUserId;

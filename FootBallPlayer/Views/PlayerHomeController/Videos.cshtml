@@ -13,7 +13,7 @@
     }
 </style>
 
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+
 <link href="~/Content/Video/mbr-additional.css" rel="stylesheet" />
 
 <link href="~/Content/Video/mobirise-icons.css" rel="stylesheet" />
@@ -74,11 +74,14 @@
 
                 @foreach (var item in Model.Videos)
     {
-            <div class="col-md-4">
-                
-                <iframe width="560" height="315" src="@item.Url" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                <div style="    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);padding:10px;font-family:cursive">
-                    <p>@item.Discribtion</p>
+            <div class="col-md-4" style="    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);">
+                <a href="/PlayerHomeController/VideoDetails/@item.Id">
+                    <h3 style="color:red ;text-align:center">Title</h3>
+                </a>
+                    <iframe width="580" height="315" src="@item.Url" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <div style="font-family:cursive;padding:10px;">
+                        <p>@item.Discribtion
+               </p>
                 </div>
 
             </div>}

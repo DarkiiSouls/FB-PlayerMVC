@@ -20,14 +20,14 @@ namespace FootBallPlayer.Controllers
         // GET: Articles
         public ActionResult Index(int? id)
         {
-            var articles = db.Articles.Include(a => a.Player).Include(x => x.Visiter);
-
+            
             if (id==null)
             {
-                var vm = new ArticleVideoModel { Articles = articles };
+                var vm = new ArticleVideoModel { Articles = db.Articles.ToList() };
                 return View(vm);
 
             }
+            var articles = db.Articles.Include(a => a.Player).Include(x => x.Visiter).Where(x => x.PlayerId == id);
             var vmWithId = new ArticleVideoModel {Articles=articles,PlayerId=(int)id };
             return View(vmWithId);
         }
@@ -39,12 +39,18 @@ namespace FootBallPlayer.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Article article = db.Articles.Find(id);
+            var article = db.Articles.FirstOrDefault(x => x.ArticleId == id);
+            var comments = db.Comments.Where(x => x.MediaId == id);
+            MediaDetailsViewModel model = new MediaDetailsViewModel { Article = article, Comments = comments.ToList(), Video = null, Photo = null };
+
+
             if (article == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+           
+            
+            return View(model);
         }
 
         // GET: Articles/Create

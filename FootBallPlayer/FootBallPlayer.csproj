@@ -210,6 +210,7 @@
     <Compile Include="Controllers\Api\UploadController.cs" />
     <Compile Include="Controllers\Api\VideosController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\FollowController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImagsController.cs" />
@@ -229,6 +230,7 @@
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Artical.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Dto\PlayersSrvDto.cs" />
     <Compile Include="Models\Dto\SignInDto.cs" />
     <Compile Include="Models\Dto\UserDto.cs" />
@@ -243,6 +245,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ArticleVideoModel.cs" />
     <Compile Include="ViewModels\HomePlayerViewModel.cs" />
+    <Compile Include="ViewModels\MediaDetailsViewModel.cs" />
     <Compile Include="ViewModels\PlayerViewModel.cs" />
     <Compile Include="ViewModels\VideoViewModel.cs" />
   </ItemGroup>
@@ -610,6 +613,9 @@
     <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\simple-line-icons\fonts\Simple-Line-Icons4c82.eot" />
     <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\simple-line-icons\fonts\Simple-Line-Icons4c82.woff" />
     <Content Include="Content\New folder\wp-content\themes\nightshade\assets\css\simple-line-icons\fonts\Simple-Line-Iconsd41d.eot" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\google_map.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -693,6 +699,9 @@
     <Content Include="Views\Articles\Details.cshtml" />
     <Content Include="Views\Articles\Edit.cshtml" />
     <Content Include="Views\Articles\Index.cshtml" />
+    <Content Include="Views\PlayerHomeController\PhotoDetails.cshtml" />
+    <Content Include="Views\PlayerHomeController\VideoDetails.cshtml" />
+    <Content Include="Views\Comments\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
