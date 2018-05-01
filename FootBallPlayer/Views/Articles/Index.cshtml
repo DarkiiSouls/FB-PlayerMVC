@@ -32,15 +32,15 @@
     @foreach (var i in Model.Articles)
     {
 
-    <div class="col-md-4" style="padding:10px ; box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2)">
+    <div class="col-md-4" style="padding:10px ; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 2px 2px -1px rgba(0,0,0,.2)">
         <a href="~/Articles/Details/@i.ArticleId">
             <h3 style="color:red;text-align:center;margin-top:-3px">Title</h3></a>
-            <img src="~/Files/ArticlesMedia/@i.CoverPhoto" height="200px" width="100%" />
+            <img src="~/Files/ArticlesMedia/@i.CoverPhoto" style="height:300px; width:100%" />
             
 
             <h4 style="text-align:center">Publisher <p style="color:red;width:100%;text-align:center">@Html.DisplayFor(modelItem => i.Visiter.YourName)</p> </h4>
 
-            <div style="height:200px;overflow:hidden;width:100%;text-align:center;font-family:sans-serif">
+            <div style="height:220px;overflow:hidden;width:100%;text-align:center;font-family:sans-serif">
                 @Html.DisplayFor(modelItem => i.Player.FullName)
 
                 @Html.DisplayFor(modelItem => i.Text)

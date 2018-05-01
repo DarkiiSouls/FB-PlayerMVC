@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using FootBallPlayer.Models;
-
+using FootBallPlayer.Models.Dto;
 
 namespace FootBallPlayer.Controllers.Api
 {
@@ -32,13 +32,36 @@ namespace FootBallPlayer.Controllers.Api
         [ResponseType(typeof(Player))]
         public async Task<IHttpActionResult> GetPlayer(int id)
         {
-            Player Player = await db.Players.FindAsync(id);
-            if (Player == null)
+            var player = db.Players.Include(X => X.PlayerUser).FirstOrDefault(x => x.PlayerId == id);
+            var vi = db.Videos.Where(x => x.PlayerId == id).ToList();
+            List<VideoDto> vdtos = new List<VideoDto>();
+            foreach (var item in vi)
             {
-                return NotFound();
+                vdtos.Add(new VideoDto { Id = item.Id, Discribtion = item.Discribtion, PlayerId = item.PlayerId, Url = item.Url });
             }
+            var img = db.Imags.Where(x => x.PlayerId == id).ToList();
+            var msg = db.Masseges.Where(x => x.PlayerId == id).ToList();
+            var art = db.Articles.Where(x => x.PlayerId == id).ToList();
+            var v = new PlayersSrvDto
+            {
+                PlayerId = id,
+                PlayerUserId = player.PlayerUserId,
+                FullName = player.FullName,
+                Age = player.Age,
+                Height = player.Height,
+                Weight = player.Weight,
+                Salary = player.Salary,
+                Detail = player.Detail,
+                DataTime = player.DataTime,
+                Articles = art,
+                Videos = vdtos,
+                Images = img,
+                CoverPhotoPath = player.CoverPhotoPath,
+                ImaId = player.ImaId,
+                Masseges = msg
 
-            return Ok(Player);
+            };
+            return Json(v);
         }
 
         // PUT: api/Players/5

@@ -4,9 +4,9 @@
     Layout = "~/Views/Shared/_PlayerLayout.cshtml";
 }
 
-<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+@*<link class="jsbin" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>*@
 
 <style type="text/css">
 
@@ -22,7 +22,7 @@
 </style>
 @using Microsoft.AspNet.Identity
 <div class="eltdf-full-width" style="margin-top:10px;position: inherit">
-    <div style="margin-top:30px;margin-left:1800px">
+    <div style="margin-top:30px;margin-left:93%">
         @if (User.Identity.IsAuthenticated)
         {
 
@@ -117,7 +117,7 @@
             new { enctype = "multipart/form-data" }))
             {
                 @Html.AntiForgeryToken()
-            <div class="modal-body">
+                <div class="modal-body">
 
 
                     <div class="form-group" style="text-align:center">
@@ -128,17 +128,17 @@
 
                         </div>
                     </div>
-               
-                <div style="text-align:center">
-                    <img id="blah" src="#" alt="your image"  style="margin-top:30px"/>
+
+                    <div style="text-align:center">
+                        <img id="blah" src="#" alt="your image" style="margin-top:30px" />
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
-                <input type="submit" class="btn btn-primary" value="Update" />
-                       @* <input  type="submit" value="Save" class="zn_contact_submit btn btn-fullcolor btn-custom-color btn--square  btn-md" />*@
-              
-            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+                    <input type="submit" class="btn btn-primary" value="Update" />
+                    @* <input  type="submit" value="Save" class="zn_contact_submit btn btn-fullcolor btn-custom-color btn--square  btn-md" />*@
+
+                </div>
             }
         </div>
     </div>
