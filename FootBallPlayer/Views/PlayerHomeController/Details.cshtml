@@ -40,80 +40,75 @@
                 <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="~/PlayerHomeController/Index/@Model.Players.PlayerId" title="go back" role="button" style="margin:35px">
                     <i class="material-icons" role="presentation">arrow_back</i>
                 </a>
-               
+
             </div>
-            <div class="demo-blog__posts mdl-grid">
-                @if (User.Identity.GetUserId() == Model.Players.PlayerUserId || User.IsInRole("Admin") ){ 
-                
-                    @*@Html.ActionLink("Edit", "Edit", new { id = Model.PlayerUserId })">*@
-                    <a href="/Players/Edit/@Model.Players.PlayerUserId" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" data-upgraded=",MaterialButton,MaterialRipple" style="margin-right:0">
-                        <i class="material-icons mdl-color-text--white" role="presentation">add</i>
-                    </a>
+            <div class="demo-blog__posts mdl-grid" style="margin-bottom:40px">
+                @if (User.Identity.GetUserId() == Model.Players.PlayerUserId || User.IsInRole("Admin"))
+        {
 
-                
-                }
-                    <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-                        <div class="mdl-card__media mdl-color-text--grey-50">
-                            <h3 style="color:snow">@Html.DisplayFor(model => model.Players.FullName)</h3>
-                        </div>
+            @*@Html.ActionLink("Edit", "Edit", new { id = Model.PlayerUserId })">*@
+            <a href="/Players/Edit/@Model.Players.PlayerUserId" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" data-upgraded=",MaterialButton,MaterialRipple" style="margin-right:0">
+                <i class="material-icons mdl-color-text--white" role="presentation">add</i>
+            </a>
 
-                        <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-                            <div style="    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
-    
-    border-radius: 10px;">
-                                <strong style="font-size:20px;padding:10px">@Html.Action("Follow", "Follow", new { id = Model.Players.PlayerUserId })</strong>
-                            </div>
-                            <div class="section-spacer"></div>
 
-                            <div style="    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+}
+                <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+                    <div class="mdl-card__media mdl-color-text--grey-50">
+                        <h3 style="color:snow">@Html.DisplayFor(model => model.Players.FullName)</h3>
+                    </div>
+
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+                        <div style="    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
 
     border-radius: 10px;">
-                                <strong style="font-size:20px;padding:10px">@Html.ActionLink("Write a Message ","Messages", new { id = Model.Players.PlayerId })</strong>
-                            </div>
+                            <strong style="font-size:20px;padding:10px">@Html.Action("Follow", "Follow", new { id = Model.Players.PlayerUserId })</strong>
                         </div>
-                        <div style="display:inline;font-style: oblique; padding: 20px;box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);background-color:#f1f1ff">
+                        <div class="section-spacer"></div>
 
-                            <br />
+                        <div style="    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
 
-                            <h4><strong style="color:red">@Html.DisplayNameFor(model => model.Players.Age):</strong> @Html.DisplayFor(model => model.Players.Age)</h4>
-                            <h4><strong style="color:red">@Html.DisplayNameFor(model => model.Players.Height):</strong> @Html.DisplayFor(model => model.Players.Height) m</h4>
-                            <h4><strong style="color:red">@Html.DisplayNameFor(model => model.Players.Weight):</strong> @Html.DisplayFor(model => model.Players.Weight) kg</h4>
-                            <h4><strong style="color:red">@Html.DisplayNameFor(model => model.Players.Salary):</strong> @Html.DisplayFor(model => model.Players.Salary) million EUR (2016)</h4>
-                            <h4><strong style="color:red">@Html.DisplayNameFor(model => model.Players.DataTime):</strong> @Html.DisplayFor(model => model.Players.DataTime)</h4>
-
-
+    border-radius: 10px;">
+                            <strong style="font-size:20px;padding:10px">@Html.ActionLink("Write a Message ", "Messages", new { id = Model.Players.PlayerId })</strong>
                         </div>
-                        <div style="padding:20px">
-                            <h4>About Me </h4>
+                    </div>
+                    <div style="display:inline;font-style: oblique; padding: 20px;box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);background-color:#f1f1ff">
 
-                            <p style="padding:20px ; text-align: justify">
-                                @Html.DisplayFor(model => model.Players.Detail)
+                        <br />
+
+                        <h4><strong style="color:red">@Html.DisplayNameFor(model => model.Players.Age):</strong> @Html.DisplayFor(model => model.Players.Age)</h4>
+                        <h4><strong style="color:red">@Html.DisplayNameFor(model => model.Players.Height):</strong> @Html.DisplayFor(model => model.Players.Height) m</h4>
+                        <h4><strong style="color:red">@Html.DisplayNameFor(model => model.Players.Weight):</strong> @Html.DisplayFor(model => model.Players.Weight) kg</h4>
+                        <h4><strong style="color:red">@Html.DisplayNameFor(model => model.Players.Salary):</strong> @Html.DisplayFor(model => model.Players.Salary) million EUR (2016)</h4>
+                        <h4><strong style="color:red">@Html.DisplayNameFor(model => model.Players.DataTime):</strong> @Html.DisplayFor(model => model.Players.DataTime)</h4>
+
+
+                    </div>
+                    <div style="padding:20px">
+                        <h4>About Me </h4>
+
+                        <p style="padding:20px ; text-align: justify">
+                            @Html.DisplayFor(model => model.Players.Detail)
+                        </p>
+                    </div>
+                    <br />
+
+                </div>
+            </div>
+            <section once="" class="cid-qvFIPBwcDt" id="footer6-c6" data-rv-view="11032">
+
+                <div class="container">
+                    <div class="media-container-row align-center mbr-white">
+                        <div class="col-12">
+                            <p class="mbr-text mb-0 mbr-fonts-style display-7">
+                                © Copyright 2017 <a href="index.html" class="text-white">Free Bootstrap Templates</a> - All Rights Reserved
                             </p>
                         </div>
-                        <br />
-                        
                     </div>
-            </div>
-            <footer class="mdl-mini-footer">
-                <div class="mdl-mini-footer--left-section">
-                    <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter">
-                        <span class="visuallyhidden">Twitter</span>
-                    </button>
-                    <button class="mdl-mini-footer--social-btn social-btn social-btn__blogger">
-                        <span class="visuallyhidden">Facebook</span>
-                    </button>
-                    <button class="mdl-mini-footer--social-btn social-btn social-btn__gplus">
-                        <span class="visuallyhidden">Google Plus</span>
-                    </button>
                 </div>
-                <div class="mdl-mini-footer--right-section">
-                    <button class="mdl-mini-footer--social-btn social-btn__share">
-                        <i class="material-icons" role="presentation">share</i>
-                        <span class="visuallyhidden">share</span>
-                    </button>
-                </div>
-                
-            </footer>
+            </section>
+
+
         </main>
         <div class="mdl-layout__obfuscator"></div>
     </div>

@@ -292,8 +292,9 @@ body .demo-blog {
   background-color: transparent;
 }
 .demo-blog--blogpost .demo-blog__posts > .mdl-card .mdl-card__media {
-  background-image: url('images/back.jpg');
-  height: 280px;
+    background-image: url('../First/images/Green_Grass.JPG');
+
+    height: 280px;
 }
 .demo-blog--blogpost .comments {
   background-color: #EEE;

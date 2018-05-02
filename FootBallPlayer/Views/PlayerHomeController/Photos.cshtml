@@ -5,8 +5,8 @@
 }
 
 @*<link class="jsbin" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
-<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>*@
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>*@
 
 <style type="text/css">
 
@@ -20,9 +20,11 @@
         cursor: pointer;
     }
 </style>
+
 @using Microsoft.AspNet.Identity
 <div class="eltdf-full-width" style="margin-top:10px;position: inherit">
-    <div style="margin-top:30px;margin-left:93%">
+
+    <div style="margin-top:30px;margin-left:84%;margin-bottom:20px">
         @if (User.Identity.IsAuthenticated)
         {
 
@@ -37,67 +39,92 @@
             </div>
         }
     </div>
-    <div class="eltdf-full-width-inner">
 
-        <div class="eltdf-grid-row">
-            <div class="eltdf-page-content-holder eltdf-grid-col-12 " style="margin-top:15px">
+    @*<div class="eltdf-full-width-inner">
 
-                <div class="vc_row wpb_row vc_row-fluid">
-                    <div class="wpb_column vc_column_container vc_col-sm-12">
-                        <div class="vc_column-inner ">
-                            <div class="wpb_wrapper">
-                                <div class="eltdf-portfolio-list-holder eltdf-pl-masonry eltdf-no-space eltdf-pl-four-columns eltdf-pl-gallery-overlay eltdf-pl-images-fixed   eltdf-pl-pag-no-pagination        " data-type=masonry data-number-of-columns=4 data-space-between-items=no data-number-of-items=-1 data-space-between-items-justified=small data-image-proportions=full data-enable-fixed-proportions=yes data-enable-image-shadow=no data-category=lifestyle data-orderby=date data-order=ASC data-item-style=gallery-overlay data-item-style-justified=gallery-overlay data-enable-title=yes data-title-tag=h3 data-enable-category=yes data-enable-count-images=yes data-enable-excerpt=no data-excerpt-length=20 data-pagination-type=no-pagination data-filter=no data-filter-order-by= name data-enable-article-animation=no data-enable-parallax-animation=no data-article-mask-color=#fff data-portfolio-slider-on=no data-enable-fullheight=yes data-portfolio-slider-full-height-decrease=yes data-enable-loop=yes data-enable-autoplay=yes data-slider-speed=5000 data-slider-speed-animation=600 data-enable-navigation=yes data-enable-pagination=yes data-max-num-pages=0 data-next-page=2>
+            <div class="eltdf-grid-row">
+                <div class="eltdf-page-content-holder eltdf-grid-col-12 " style="margin-top:15px">
 
-                                    <div class="eltdf-pl-inner eltdf-outer-space clearfix">
+                    <div class="vc_row wpb_row vc_row-fluid">
+                        <div class="wpb_column vc_column_container vc_col-sm-12">
+                            <div class="vc_column-inner ">
+                                <div class="wpb_wrapper">
+                                    <div class="eltdf-portfolio-list-holder eltdf-pl-masonry eltdf-no-space eltdf-pl-four-columns eltdf-pl-gallery-overlay eltdf-pl-images-fixed   eltdf-pl-pag-no-pagination        " data-type=masonry data-number-of-columns=4 data-space-between-items=no data-number-of-items=-1 data-space-between-items-justified=small data-image-proportions=full data-enable-fixed-proportions=yes data-enable-image-shadow=no data-category=lifestyle data-orderby=date data-order=ASC data-item-style=gallery-overlay data-item-style-justified=gallery-overlay data-enable-title=yes data-title-tag=h3 data-enable-category=yes data-enable-count-images=yes data-enable-excerpt=no data-excerpt-length=20 data-pagination-type=no-pagination data-filter=no data-filter-order-by= name data-enable-article-animation=no data-enable-parallax-animation=no data-article-mask-color=#fff data-portfolio-slider-on=no data-enable-fullheight=yes data-portfolio-slider-full-height-decrease=yes data-enable-loop=yes data-enable-autoplay=yes data-slider-speed=5000 data-slider-speed-animation=600 data-enable-navigation=yes data-enable-pagination=yes data-max-num-pages=0 data-next-page=2>
 
-                                        @if (Model.Images.Count() == 0)
-                                        {
+                                        <div class="eltdf-pl-inner eltdf-outer-space clearfix">
 
-                                        }
-                                        else
-                                        {
-                                            for (int i = 0; i < Model.Images.Count; i++)
+                                            @if (Model.Images.Count() == 0)
                                             {
-                                                <div class="eltdf-pl-grid-sizer"></div>
-                                                <div class="eltdf-pl-grid-gutter"></div>
 
-                                                <article class="eltdf-pl-item eltdf-item-space eltdf-pl-masonry-large-width post-120 portfolio-item type-portfolio-item status-publish has-post-thumbnail hentry portfolio-category-lifestyle portfolio-tag-black-white portfolio-tag-fashion portfolio-tag-portraits">
-                                                    <div class="eltdf-pl-item-inner">
-                                                        <div class="eltdf-pli-image">
-                                                            <a href="/PlayerHomeController/PhotoDetails/@Model.Images[i].ImageId"><img width="1100" height="550" src="~/Files/Gallery/@Model.Images[i].Name" /></a>
-                                                        </div>
-                                                        <div class="eltdf-pli-text-holder">
-                                                            <div class="eltdf-pli-text-wrapper">
-                                                                <div class="eltdf-pli-text">
-                                                                    <h3 itemprop="name" class="eltdf-pli-title entry-title">
-                                                                        Decorations		<span class="eltdf-pli-line"></span>
-                                                                    </h3>
+                                            }
+                                            else
+                                            {
+                                                for (int i = 0; i < Model.Images.Count; i++)
+                                                {
+                                                    <div class="eltdf-pl-grid-sizer"></div>
+                                                    <div class="eltdf-pl-grid-gutter"></div>
 
-                                                                    <div class="eltdf-pli-category-holder">
-                                                                        <a itemprop="url" class="eltdf-pli-category" href="/PlayerHomeController/PhotoDetails/@Model.Images[i].ImageId">Lifestyle</a>
+                                                    <article class="eltdf-pl-item eltdf-item-space eltdf-pl-masonry-large-width post-120 portfolio-item type-portfolio-item status-publish has-post-thumbnail hentry portfolio-category-lifestyle portfolio-tag-black-white portfolio-tag-fashion portfolio-tag-portraits">
+                                                        <div class="eltdf-pl-item-inner">
+                                                            <div class="eltdf-pli-image">
+                                                                <a href="/PlayerHomeController/PhotoDetails/@Model.Images[i].ImageId"><img width="1100" height="550" src="~/Files/Gallery/@Model.Images[i].Name" /></a>
+                                                            </div>
+                                                            <div class="eltdf-pli-text-holder">
+                                                                <div class="eltdf-pli-text-wrapper">
+                                                                    <div class="eltdf-pli-text">
+                                                                        <h3 itemprop="name" class="eltdf-pli-title entry-title">
+                                                                            Decorations		<span class="eltdf-pli-line"></span>
+                                                                        </h3>
+
+                                                                        <div class="eltdf-pli-category-holder">
+                                                                            <a itemprop="url" class="eltdf-pli-category" href="/PlayerHomeController/PhotoDetails/@Model.Images[i].ImageId">Lifestyle</a>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <a itemprop="url" class="eltdf-pli-link eltdf-block-drag-link" href="/PlayerHomeController/PhotoDetails/@Model.Images[i].ImageId" target="_self"></a>
                                                         </div>
-                                                        <a itemprop="url" class="eltdf-pli-link eltdf-block-drag-link" href="/PlayerHomeController/PhotoDetails/@Model.Images[i].ImageId" target="_self"></a>
-                                                    </div>
-                                                </article>
+                                                    </article>
 
+                                                }
                                             }
-                                        }
 
+
+                                        </div>
 
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>*@
+    <div class="fh5co-page">
+
+        <div id="fh5co-main">
+            <div class="fh5co-gallery">
+                @if (Model.Images.Count() == 0)
+                {
+
+                }
+                else
+                {
+                    for (int i = 0; i < Model.Images.Count; i++)
+                    {
+                        <a class="gallery-item" href="/PlayerHomeController/PhotoDetails/@Model.Images[i].ImageId">
+                            <img src="~/Files/Gallery/@Model.Images[i].Name" style="width:100%">
+                            @*<span class="overlay">
+                                    <h2>Nature</h2>
+                                    <span>14 Photos</span>
+                                </span>*@
+                        </a>
+
+                    }
+                }
+            </div>
         </div>
     </div>
-
 </div>
 <!-- Button trigger modal -->
 @*<button type="button" class="btn btn-primary btn-lg" >
@@ -143,10 +170,10 @@
         </div>
     </div>
 </div>
-<footer class="eltdf-page-footer">
+<footer class="eltdf-page-footer" >
 
     <div class="eltdf-footer-bottom-holder">
-        <div class="eltdf-footer-bottom-inner eltdf-grid">
+        <div class="eltdf-footer-bottom-inner eltdf-grid" style="width:100%">
             <div class="eltdf-grid-row ">
                 <div class="eltdf-grid-col-12">
                     <div id="text-6" class="widget eltdf-footer-bottom-column-1 widget_text">

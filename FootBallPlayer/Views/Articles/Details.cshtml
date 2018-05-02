@@ -6,57 +6,103 @@
 }
 @using Microsoft.AspNet.Identity
 
-
-<div style="margin: 30px 10% 10% 10%;
-    
-    text-align: center;
-    
-    position: relative;    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);">
-
-    <dl class="dl-horizontal">
-        <h3 style="color:red;text-align:center;padding-top:15px">Title</h3>
-        <img src="~/Files/ArticlesMedia/@Model.Article.CoverPhoto" height="200px" width="100%" />
-
-
-
-        <dd style="padding:20px;margin-left:0">
-            @Html.DisplayFor(model => model.Article.Text)
-        </dd>
-        
-        <dt>
-            @Html.DisplayNameFor(model => model.Article.PublishDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Article.PublishDate)
-        </dd>
-
-
-
-
-
-    </dl>
-    <hr />
-    <br />
-    <p style="color:red">
-        @*@if (User.IsInRole("Admin") || Model.V ==User.Identity.GetUserId()) {
-              @Html.ActionLink("Edit", "Edit", new { id = Model.Article.ArticleId })
-            } |*@
-
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-    <br />
-</div>
-
-<div style=" box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
-    text-align: center;
-    position: relative;margin: 30px 10% 10% 10%">
-    <h3 style="color:red ;text-align:center">Comment</h3>
-    @Html.Action("Create", "Comments", new Comment { MediaId = Model.VideoId, MediaType = 1 })
-    @foreach (var item in Model.Comments)
-    {
-        <div class="col-md-4">
-            @item.Text
-        </div>
+<style>
+    header {
+        position: absolute;
+        width: inherit;
     }
-</div>
+
+    .eltdf-fullscreen-menu-opener, .eltdf-fullscreen-menu-opener .eltdf-fm-lines {
+        color: #d7dfe8;
+    }
+</style>
+
+
+<section class="menu cid-qv1frvgcz3" once="menu" id="menu1-5g" data-rv-view="10975"></section>
+
+<section class="engine"><a href="https://mobirise.co/i">how to build a website for free</a></section>
+<section class="header11 cid-qv5CFv5hOn" id="header11-5f" data-rv-view="10937">
+
+    <!-- Block parameters controls (Blue "Gear" panel) -->
+    <!-- End block parameters -->
+
+    <div class="container align-left">
+        <div class="media-container-column mbr-white col-md-12">
+
+            <h1 style="text-align:center" class="mbr-section-title py-3 mbr-fonts-style display-1">Player Videos</h1>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="mbr-gallery mbr-slider-carousel cid-qvz0cgxPXY" id="gallery3-bl" data-rv-view="10940">
+    <div class="row">
+    <div style="margin: 30px 3% 5% 3%;
+
+    text-align: center;
+
+    position: relative;    box-shadow: 0  1px 1px 0 rgba(0,0,0,.14), 0 1px 1px 0 rgba(0,0,0,.12), 0 1px 1px -1px rgba(0,0,0,.2);">
+
+        <dl class="dl-horizontal">
+            <h3 style="color:red;text-align:center;padding-top:15px">Title</h3>
+            <img src="~/Files/ArticlesMedia/@Model.Article.CoverPhoto" height="200px" width="100%" />
+
+
+
+            <dd style="padding:20px;margin-left:0">
+                @Html.DisplayFor(model => model.Article.Text)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Article.PublishDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Article.PublishDate)
+            </dd>
+
+
+
+
+
+        </dl>
+        <hr />
+        <br />
+        <p style="color:red">
+            @*@if (User.IsInRole("Admin") || Model.V ==User.Identity.GetUserId()) {
+                  @Html.ActionLink("Edit", "Edit", new { id = Model.Article.ArticleId })
+                } |*@
+
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+        <br />
+    </div>
+
+    <div style="box-shadow: 0  1px 1px 0 rgba(0,0,0,.14), 0 1px 1px 0 rgba(0,0,0,.12), 0 1px 1px -1px rgba(0,0,0,.2);    margin:0 3% 5% 3%;" ;
+         text-align: center;
+         position: relative;margin: 30px 3% 10% 3%">
+        <h3 style="color:red ;text-align:center">Comment</h3>
+        @Html.Action("Create", "Comments", new Comment { MediaId = Model.VideoId, MediaType = 1 })
+        @foreach (var item in Model.Comments)
+        {
+            <div class="col-md-4">
+                @item.Text
+            </div>
+        }
+    </div>
+    </div>
+</section>
+<section once="" class="cid-qvFIPBwcDt" id="footer6-c6" data-rv-view="11032">
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="col-12">
+                <p class="mbr-text mb-0 mbr-fonts-style display-7">
+                    © Copyright 2017 <a href="index.html" class="text-white">Free Bootstrap Templates</a> - All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+

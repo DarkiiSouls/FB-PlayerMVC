@@ -7,63 +7,202 @@
     Layout = "~/Views/Shared/_PlayerLayout.cshtml";
 }
 
-@if (User.Identity.IsAuthenticated)
+@*@if (User.Identity.IsAuthenticated)
 {
 
 
 
-<button data-toggle="modal" data-target="#myModal" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" data-upgraded=",MaterialButton,MaterialRipple" style="margin-right:0;    right: 0;
+    <button data-toggle="modal" data-target="#myModal" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" data-upgraded=",MaterialButton,MaterialRipple" style="margin-right:0;    right: 0;
     position: absolute;
     margin: 20px;">
-    <a href="~/Articles/Create/@Model.PlayerId">
-        <i class="material-icons mdl-color-text--white" role="presentation">add</i>
+        <a href="~/Articles/Create/@Model.PlayerId">
+            <i class="material-icons mdl-color-text--white" role="presentation">add</i>
 
-    </a>
-  
+        </a>
 
-</button>
+
+    </button>
 }
 
 <p>
     @Html.ActionLink("Create New", "Create", new { id = Model.PlayerId })
-</p>
-<div class="row" style="margin:10px;  
-    margin: 60px 40px 0 40px;">
-    @foreach (var i in Model.Articles)
-    {
+</p>*@
 
-    <div class="col-md-4" style="padding:10px ; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 2px 2px -1px rgba(0,0,0,.2)">
-        <a href="~/Articles/Details/@i.ArticleId">
-            <h3 style="color:red;text-align:center;margin-top:-3px">Title</h3></a>
-            <img src="~/Files/ArticlesMedia/@i.CoverPhoto" style="height:300px; width:100%" />
-            
 
-            <h4 style="text-align:center">Publisher <p style="color:red;width:100%;text-align:center">@Html.DisplayFor(modelItem => i.Visiter.YourName)</p> </h4>
+<style>
+    header {
+        position: absolute;
+        width: inherit;
+    }
 
-            <div style="height:220px;overflow:hidden;width:100%;text-align:center;font-family:sans-serif">
-                @Html.DisplayFor(modelItem => i.Player.FullName)
+    .eltdf-fullscreen-menu-opener, .eltdf-fullscreen-menu-opener .eltdf-fm-lines {
+        color: #d7dfe8;
+    }
+</style>
 
-                @Html.DisplayFor(modelItem => i.Text)
+
+
+<!-- Google Analytics -->
+<noscript>
+    <iframe src="http://www.googletagmanager.com/ns.html?id=GTM-PFK425" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- /Google Analytics -->
+
+<section class="menu cid-qv1frvgcz3" once="menu" id="menu1-5g" data-rv-view="10975"></section>
+
+<section class="engine"><a href="https://mobirise.co/i">how to build a website for free</a></section>
+<section class="header11 cid-qv5CFv5hOn" id="header11-5f" data-rv-view="10937">
+
+    <!-- Block parameters controls (Blue "Gear" panel) -->
+    <!-- End block parameters -->
+
+    <div class="container align-left">
+        <div class="media-container-column mbr-white col-md-12">
+
+            <h1 style="text-align:center" class="mbr-section-title py-3 mbr-fonts-style display-1">Player Articles</h1>
+
+
+        </div>
+    </div>
+    <div style="margin-top:20px;right:30px;position:absolute">
+
+        @if (User.Identity.IsAuthenticated)
+        {
+
+            @*@Html.ActionLink("Edit", "Edit", new { id = Model.PlayerUserId })">*@
+
+            <div data-toggle="modal" data-target="#myModal" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" data-upgraded=",MaterialButton,MaterialRipple" style="margin-right:0">
+                <label for="file-upload" class="custom-file-upload">
+                    <i class="material-icons mdl-color-text--white" role="presentation">add</i>
+                </label>
 
 
             </div>
-            <hr />
-            <h4 style="text-align:center">Publich Date <p style="color:red;text-align:center">@Html.DisplayFor(modelItem => i.PublishDate)</p> </h4>
+        }
+    </div>
+</section>
+
+<section class="mbr-gallery mbr-slider-carousel cid-qvz0cgxPXY" id="gallery3-bl" data-rv-view="10940">
+
+    <div>
+        <div>
+            <!-- Filter -->
+            <!-- Gallery -->
+            <div class="row" style="padding:10px">
+                @foreach (var i in Model.Articles)
+    {
+
+            <div class="col-md-4" style="padding:10px ; box-shadow: 0 1px 1px 0 rgba(0,0,0,.14), 0 0px 0px 0 rgba(0,0,0,.12), 0 0px 0px -1px rgba(0,0,0,.2)">
+                <a href="~/Articles/Details/@i.ArticleId">
+                    <h3 style="color:red;text-align:center;margin-top:-3px">Title</h3>
+                </a>
+                <img src="~/Files/ArticlesMedia/@i.CoverPhoto" style="height:300px; width:100%" />
+
+
+                <h4 style="text-align:center">Publisher <p style="color:red;width:100%;text-align:center">@Html.DisplayFor(modelItem => i.Visiter.YourName)</p> </h4>
+
+                <div style="height:220px;overflow:hidden;width:100%;text-align:center;font-family:sans-serif">
+                    @Html.DisplayFor(modelItem => i.Player.FullName)
+
+                    @Html.DisplayFor(modelItem => i.Text)
+
+
+                </div>
+                <hr />
+                <h4 style="text-align:center">Publich Date <p style="color:red;text-align:center">@Html.DisplayFor(modelItem => i.PublishDate)</p> </h4>
 
 
 
 
 
-</div>
-  
+            </div>
 
 
-    @*@Html.ActionLink("Edit", "Edit", new { id = i.ArticleId }) |
-        @Html.ActionLink("Details", "Details", new { id = i.ArticleId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = i.ArticleId })*@
+
+            @*@Html.ActionLink("Edit", "Edit", new { id = i.ArticleId }) |
+    @Html.ActionLink("Details", "Details", new { id = i.ArticleId }) |
+    @Html.ActionLink("Delete", "Delete", new { id = i.ArticleId })*@
 
 }
+            </div>
+     
+            <div data-app-prevent-settings="" class="mbr-slider modal fade carousel slide" tabindex="-1" data-keyboard="true" data-interval="false" id="lb-gallery3-bl">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active video-container"><img src="assets/images/gallery06.jpg" alt=""></div>
+                                <div class="carousel-item video-container"><img src="assets/images/gallery07.jpg" alt=""></div>
+                            </div><a class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#lb-gallery3-bl"><span class="mbri-left mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control carousel-control-next" role="button" data-slide="next" href="#lb-gallery3-bl"><span class="mbri-right mbr-iconfont" aria-hidden="true"></span><span class="sr-only">Next</span></a><a class="close" href="#" role="button" data-dismiss="modal"><span class="sr-only">Close</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+</section>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            @using (Html.BeginForm("Create",
+"Articles", FormMethod.Post,
+new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="container">
+            <div row style="margin-top:5% ;margin-bottom:10%">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <h3>Article</h3>
+                    <div class="col-md-10">
+                        @*@Html.TextAreaFor(model => model.Articles.Text, new { @class = "form-control-TextArea" })
+                        @Html.ValidationMessageFor(model => model.Articles.Text, "", new { @class = "text-danger" })*@
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="form-group" style="margin-top:10% ">
+                    <div class="col-md-offset-2 col-md-10" style=" display: -webkit-box;">
+                        <label style="margin-left:-80px">Image</label>
+                        <input type="file" name="file" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group" style="margin-top:5% ">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+
+
+
+           
+        </div>      }
+        </div>
+    </div>
+</div>
+<section once="" class="cid-qvFIPBwcDt" id="footer6-c6" data-rv-view="11032">
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="col-12">
+                <p class="mbr-text mb-0 mbr-fonts-style display-7">
+                    © Copyright 2017 <a href="index.html" class="text-white">Free Bootstrap Templates</a> - All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 

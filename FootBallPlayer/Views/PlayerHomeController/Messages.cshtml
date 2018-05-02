@@ -19,13 +19,13 @@
 <style>
     .Text__input {
         height: 34px;
-        width: 700px;
+        width: 85%;
         border-radius: 20px;
         background: whitesmoke;
         margin-left: 20px;
-        text-align: center;
     }
 </style>
+<div class="row" style="margin-bottom:40px">
 <div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
     <div class="demo-back">
         <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="~/PlayerHomeController/Details/@Model.Players.PlayerId" title="go back" role="button" style="margin:35px">
@@ -47,7 +47,7 @@
                                 Masseges
                             </h3>
                         </div>
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
 
                             @Html.TextAreaFor(model => model.Massege.Text, new { @class = "Text__input" })
                             @Html.ValidationMessageFor(model => model.Massege.Text, "", new { @class = "text-danger" })
@@ -55,8 +55,8 @@
 
                         </div>
                         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="    position: absolute;
-    right: 40px;
-    margin: 46px;">
+    left: 82%;
+    margin: 40px;">
                             <i class="material-icons" role="presentation">check</i><span class="visuallyhidden">add comment</span>
                         </button>
                         @for (int i = 0; i < Model.Masseges.Count(); i++)
@@ -71,7 +71,7 @@
                                     </div>
                                 </header>
                                 <div class="comment__text" style="    background-color: white;padding: 10px;border-radius: 10px">
-                                    @Model.Masseges[i].Text
+                                    <p>@Model.Masseges[i].Text</p>
                                 </div>
                                 <nav class="comment__actions">
                                     <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
@@ -94,3 +94,17 @@
         </div>
     </main>
 </div>
+</div>
+<section once="" class="cid-qvFIPBwcDt" id="footer6-c6" data-rv-view="11032">
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="col-12">
+                <p class="mbr-text mb-0 mbr-fonts-style display-7">
+                    © Copyright 2017 <a href="index.html" class="text-white">Free Bootstrap Templates</a> - All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+

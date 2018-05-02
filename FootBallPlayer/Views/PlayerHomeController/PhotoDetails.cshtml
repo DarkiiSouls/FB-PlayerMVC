@@ -26,7 +26,7 @@
 
 
     @*@Html.Action("Comment", new { MediaId = Model.VideoId, MediaType = 1 })*@
-    <div class="col-md-4" style=" box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2) ;background-color:white;margin:5% 80% 0 60%">
+    <div class="col-md-4" style=" box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2) ;background-color:white;    margin: 35% 5% 0 30%;">
         <h3 style="color:red ;text-align:center">Comment</h3>
         <div style="padding:5px">
             @Html.Action("Create", "Comments", new Comment { MediaId = Model.VideoId, MediaType = 1 })
