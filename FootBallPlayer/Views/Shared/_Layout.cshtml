@@ -10,6 +10,7 @@
     <!-- Custom Theme files -->
     @Styles.Render("~/Content/css")
 
+    <link rel="shortcut icon" href="~/Content/First/images/favicon.ico" type="image/x-icon" />
     <link href="~/Content/Second/css/themes/kallyas/framework/hogash-mailchimp/assets/css/hg-mailchimp8a54.css" rel="stylesheet" />
     <link href="~/Content/Second/css/themes/kallyas-child/style9dbb.css" rel="stylesheet" />
     <link href="~/Content/Second/css/themes/kallyas/css/bootstrap.min9dbb.css" rel="stylesheet" />
@@ -47,6 +48,32 @@
         }
     </style>
     <link href="~/Content/Site.css" rel="stylesheet" />
+    @*<script type="text/javascript">
+                if (navigator.serviceWorker.controller) {
+                    console.log('[PWA Builder] active service worker found, no need to register')
+                } else {
+                    //Register the ServiceWorker
+                    navigator.serviceWorker.register('pwabuilder-sw.js', {
+                        scope: './'
+                    }).then(function (reg) {
+                        console.log('Service worker has been registered for scope:' + reg.scope);
+                    });
+                }
+
+                self.addEventListener('install', function (event) {
+                    var indexPage = new Request('index.html');
+                    event.waitUntil(
+                        fetch(indexPage).then(function (response) {
+                            return caches.open('pwabuilder-offline').then(function (cache) {
+                                console.log('[PWA Builder] Cached index page during Install' + response.url);
+                                return cache.put(indexPage, response);
+                            });
+                        }));
+                });
+
+            </script>
+        <script src="~/Content/ServiceWorker2/pwabuilder-sw-register.js"></script>
+        <script src="~/Content/ServiceWorker2/pwabuilder-sw.js"></script>*@
     <script src="~/Content/Second/js/jquery/jqueryb8ff.js"></script>
     <script src="~/Content/Second/css/plugins/revslider/public/assets/js/jquery.themepunch.tools.mina88c.js"></script>
     <script src="~/Content/Second/css/plugins/revslider/public/assets/js/jquery.themepunch.revolution.mina88c.js"></script>
